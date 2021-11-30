@@ -92,10 +92,10 @@ $$\vect{OG}=\dfrac{1}{M}\sum\limits_{i=1}^{n}M_i \vect{OG_i} .$$
 \begin{defi}
 Soient : 
 \begin{itemize}
-\item un solide $S$ de masse $m$ en mouvement par rapport à un repère $\mathcal{R}_0=\repere{O_0}{x_0}{y_0}{z_0}$;
-\item $\mathcal{R}_S=\repere{O}{x}{y}{z}$ le repère lié au solide $S$;
-\item $P$ un point de $S$ tel que $\vect{OP}=x_p\vect{x}+y_p\vect{y}+z_p\vect{z}$;
-\item $\vect{u}$ un vecteur unitaire du solide $S$.
+\item un solide $S$ de masse $m$ en mouvement par rapport à un repère $\mathcal{R}_0=\repere{O_0}{i_0}{j_0}{k_0}$;
+\item $\mathcal{R}_S=\repere{O}{i}{j}{k}$ le repère lié au solide $S$;
+\item $P$ un point de $S$ tel que $\vect{OP}=x_p\vect{i}+y_p\vect{j}+z_p\vect{k}$;
+\item $\vect{u}$ un vecteur unitaire lié au solide $S$ tel que $\vect{u}=u_x \vect{i}+u_y \vect{j}+u_z \vect{k}$.
 \end{itemize}
 
 On appelle opérateur d'inertie l'application linéaire définie par :
@@ -148,7 +148,7 @@ $$I_{\Delta}(S)=\int\limits_{S} d_{\Delta}^2 \dd m \quad \text{où } d_{\Delta} 
 \end{minipage}
 
 \begin{rem}
-Si on connaît $\inertie{O}{S}$, alors $I_{\Delta}(S)=\vect{u}\inertie{O}{S}\vect{u}$ avec $\vect{u}$ \textbf{vecteur unitaire}.
+Si on connaît $\inertie{O}{S}$, alors $I_{\Delta}(S)=\vect{u}^\top\inertie{O}{S}\vect{u}$ avec $\vect{u}$ \textbf{vecteur unitaire}.
 \end{rem}
 \end{defi}
 
@@ -172,7 +172,7 @@ Si le solide est modélisé par une masse ponctuelle $m$ en $G$ et si on souhait
 \begin{defi}\textbf{Matrice de Passage}
 On appelle $P_{12}$ la matrice de passage permettant de passer de la base $\mathcal{B}_1$ à la base $\mathcal{B}_2$. Cette matrice est constituée en colonnes des coordonnées des vecteurs de la base $\mathcal{B}_2$ écrits dans la base d'origine $\mathcal{B}_1$. On l'appelle aussi matrice de changement de base. Cette matrice est inversible.
 
-Dans le cas des matrices de rotation, $P_{12}^{-1}=P_{12}^{T}$.
+Dans le cas des matrices de rotation, $P_{12}^{-1}=P_{12}^{\top}$.
 \end{defi}
 
 \begin{exemple}
