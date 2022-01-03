@@ -144,6 +144,7 @@ $.
 \fi
 
 
+ 
 \question{Déterminer le moment cinétique $\vectmc{K}{2}{0}$  calculé au point $K$ de l'hélice \textbf{2} dans son mouvement par rapport à \textbf{0}.}
 \ifprof
 \begin{corrige}
@@ -336,7 +337,7 @@ d'où,
 On trouve alors : 
 
 $
-\overrightarrow{z}_0\cdot \vectmc{K}{3}{0}=
+\overrightarrow{z}_0\cdot \vectmd{K}{3}{0}=
 m\frac{\dd\left[a\cdot b\cdot \dot{\beta}\cos\beta+a^2\cdot \dot{\alpha}+b^2\cdot \dot{\alpha}\sin^2\beta\right]}{\dd t}
 $
 
@@ -362,6 +363,30 @@ $.
 \fi
 
 
+
+Indications : 
+\begin{enumerate}
+\item 
+\item $C_m=\left(\vectmd{K}{1}{R_0}+\vectmd{K}{2}{R_0}+\vectmd{K}{3}{R_0}\right)\cdot \overrightarrow{z}_0$
+\item  $ \vectmc{K}{1}{0}\cdot\overrightarrow{z_0} = J \dot{\alpha}$
+\item  $\vectmc{K}{2}{0}$: $
+\vectmc{K}{2}{0}=\left(
+\begin{array}{c}
+A\cdot \dot{\beta}\\
+B\cdot \dot{\alpha}\cdot \sin\beta+M\cdot a^2\cdot \dot{\alpha}\sin\beta\\
+C\cdot \dot{\alpha}\cdot \cos\beta+M\cdot a^2\cdot \dot{\alpha}\cos\beta\\
+\end{array}
+\right)_{\base{{x}_2}{{y}_2}{{z}_2}}\\
+$
+\item $
+\vectmc{K}{3}{0}=m\left[a\cdot b\cdot\dot{\beta} \overrightarrow{z}_2+a^2\cdot \dot{\alpha}\cdot\overrightarrow{z}_1+b^2\cdot \dot{\beta}\cdot\overrightarrow{x}_2+b\cdot a\cdot \dot{\alpha}\cdot \cos\beta\cdot \overrightarrow{x}_1+b^2\cdot \dot{\alpha}\sin\beta\cdot \overrightarrow{y}_2\right]
+$
+\item $\overrightarrow{z}_0\cdot \vectmd{K}{1}{0}=J\cdot \ddot{\alpha}$.
+\item $\overrightarrow{z}_0\cdot \vectmd{K}{2}{0}=m\left[a\cdot b\cdot \left(\ddot{\beta}\cos\beta-\dot{\beta}^2\sin\beta\right)+a^2\ddot{\alpha}+b^2\cdot\left(\ddot{\alpha}\sin^2\beta+2\dot{\alpha}\dot{\beta}\sin\beta\cos\beta\right)\right]$
+\item $
+C_m=-m\cdot a\cdot b\cdot \dot{\beta}^2\sin\beta
+$
+\end{enumerate}
 \ifprof
 \else
 \end{multicols}

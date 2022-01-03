@@ -291,7 +291,8 @@ Le modèle d’étude est celui représenté à la figure suivante correspondant
 \begin{itemize}
 \item L’étude est modélisable dans le plan.
 \item Toutes les liaisons sont supposées parfaites.
-\item Les inerties des pièces sont négligées sauf la masse de la charge à soulever.
+\item Les inerties des pièces sont négligées. 
+\item Toutes  les masses sont négligées \textbf{sauf la masse $m_4$ de la charge à soulever}.
 \item L’angle $\alpha$ entre la charge transportée et la verticale$\vect{z_0}$ reste constant.
 \item $G_4$, centre de gravité de la charge transportée (4), reste en permanence à la verticale du point $A$ d’appui au sol.
 \end{itemize}
@@ -409,7 +410,7 @@ $-Lm_4\cos\theta_{10}\ddot{h}(t) =C_r +m_4gL\cos\theta_{10}$
 $ \Leftrightarrow C_r=-m_4 L \cos\theta_{10} \left(g+\ddot{h}(t)\right) $. 
 \end{itemize}
 
-En réalisant l'application numérique, on a : $C_r = - 60 \times 51,8\times 10^{-2}\times \cos 54,5 \left(9,81 +\dfrac{0,425}{0,5} \right) \simeq \SI{190,5}{Nm} $.
+En réalisant l'application numérique, on a : $C_r = - 60 \times 51,8\times 10^{-2}\times \cos 54,5 \left(9,81 +\dfrac{0,425}{0,5} \right) \simeq -\SI{190,5}{Nm} $.
 
 
 \end{corrige}
@@ -543,7 +544,7 @@ Su ces deux critères le moteur proposé est donc validé.
 \item .
 \item $\vectmc{O_1}{E}{0}\cdot \vect{x_0} = -Lm_4\cos\theta_{10}\dot{h}(t)$.
 \item $\vectmd{O_1}{E}{0}\cdot\vect{x_0}=-Lm_4\cos\theta_{10}\ddot{h}(t)$.
-\item $ C_r=-m_4 L \cos\theta_{10} \left(g+\ddot{h}(t)\right)\simeq \SI{190,5}{Nm} $. 
+\item $ C_r=-m_4 L \cos\theta_{10} \left(g+\ddot{h}(t)\right)\simeq -\SI{190,5}{Nm} $. 
 \item $C_m\simeq \SI{2,12}{Nm}$.
 \item ...
 \item ...
