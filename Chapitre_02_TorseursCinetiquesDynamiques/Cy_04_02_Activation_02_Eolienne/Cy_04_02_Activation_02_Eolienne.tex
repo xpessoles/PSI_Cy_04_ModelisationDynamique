@@ -363,7 +363,11 @@ $.
 \fi
 
 
-
+\ifprof
+\else
+\ifcolle
+\else
+\footnotesize
 Indications : 
 \begin{enumerate}
 \item 
@@ -382,11 +386,18 @@ $
 \vectmc{K}{3}{0}=m\left[a\cdot b\cdot\dot{\beta} \overrightarrow{z}_2+a^2\cdot \dot{\alpha}\cdot\overrightarrow{z}_1+b^2\cdot \dot{\beta}\cdot\overrightarrow{x}_2+b\cdot a\cdot \dot{\alpha}\cdot \cos\beta\cdot \overrightarrow{x}_1+b^2\cdot \dot{\alpha}\sin\beta\cdot \overrightarrow{y}_2\right]
 $
 \item $\overrightarrow{z}_0\cdot \vectmd{K}{1}{0}=J\cdot \ddot{\alpha}$.
+\item $\overrightarrow{z}_0\cdot \vectmd{K}{2}{0}=\ddot{\alpha}\left[B\cdot \sin^2\beta+C\cdot \cos^2\beta+M\cdot a^2\right]
++2\cdot\dot{\alpha}\dot{\beta}\cdot \cos\beta\cdot \sin\beta\left[B-C\right]$.
+
 \item $\overrightarrow{z}_0\cdot \vectmd{K}{2}{0}=m\left[a\cdot b\cdot \left(\ddot{\beta}\cos\beta-\dot{\beta}^2\sin\beta\right)+a^2\ddot{\alpha}+b^2\cdot\left(\ddot{\alpha}\sin^2\beta+2\dot{\alpha}\dot{\beta}\sin\beta\cos\beta\right)\right]$
 \item $
 C_m=-m\cdot a\cdot b\cdot \dot{\beta}^2\sin\beta
 $
 \end{enumerate}
+\normalsize
+\fi
+\fi
+
 \ifprof
 \else
 \end{multicols}
