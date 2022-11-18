@@ -127,18 +127,23 @@ C_m=\left(\vectmd{K}{1}{R_0}+\vectmd{K}{2}{R_0}+\vectmd{K}{3}{R_0}\right)\cdot \
 \begin{itemize}
 \item Le mouvement de $1/0$ est un mouvement de rotation autour d'un axe fixe $\couple{K}{{z}_0}$ : 
 
-\item $\vectmc{K}{1}{0}\cdot \vect{z_0}=\left(\overline{\overline{I}}_K(1)\cdot \overrightarrow{\Omega}(1/0)\right)\cdot \vect{z_0}=\left(\overline{\overline{I}}_K(1)\cdot \dot{\alpha}\cdot \vect{z_0} \right)\cdot \vect{z_0}$
-
-\item or on note $J$ son moment d'inertie par rapport à l'axe $\couple{K}{{z}}$ soit : 
-$
-\overline{\overline{I}}_K(1)\cdot\vect{z_0}\cdot \vect{z_0}=J
-$
-
-\item Ainsi : 
-$
-\vectmc{K}{1}{0}\cdot \vect{z_0}=J \dot{\alpha}
-$.
+\item $\vectmc{K}{1}{0}\cdot \vect{z_0}=\left(\overline{\overline{I}}_K(1)\cdot \overrightarrow{\Omega}(1/0)\right)\cdot \vect{z_0}=\left(\overline{\overline{I}}_K(1)\cdot \dot{\alpha}\cdot \vect{z_0} \right)\cdot \vect{z_0}$.
 \end{itemize}
+
+
+Or on note $J$ son moment d'inertie par rapport à l'axe $\couple{K}{{z}}$ soit : 
+$\overline{\overline{I}}_K(1)\cdot\vect{z_0}\cdot \vect{z_0}=J$.
+
+Ainsi : 
+$\vectmc{K}{1}{0}\cdot \vect{z_0}=J \dot{\alpha}$.
+
+
+\begin{rem}
+En considérant que $\overline{\overline{I}}_K(1) = \matinertie{A_1}{B_1}{J}{-D_1}{-E_1}{-F_1}{\rep{1}}$,
+$\overline{\overline{I}}_K(1) \vecto{1}{0} = \begin{pmatrix} -E_1 \alphap \\ -D_1 \alphap \\ J \alphap  \end{pmatrix}$ et $\vectmc{K}{1}{0}\cdot \vect{z_0}=J \dot{\alpha}$.
+\end{rem}
+
+
 \end{corrige}
 \else
 \fi
