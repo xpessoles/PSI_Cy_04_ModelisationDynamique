@@ -1,86 +1,42 @@
-\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-\usepackage[%
-    pdftitle={Modélisation dynamique : cinétique},
-    pdfauthor={Xavier Pessoles}]{hyperref}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Colle 03 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-    
-\input{style/new_style}
-\input{style/macros_SII}
+\def\xxtitreexo{Régulateur}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{}}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\fichetrue
-%\fichefalse
-
-\proftrue
-\proffalse
-
-\tdtrue
-%\tdfalse
-
-\courstrue
-\coursfalse
-
-
-\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
-\def\xxtete{Sciences Industrielles de l'Ingénieur}
-
-\def\classe{\textsf{PSI$\star$ -- MP}}
-\def\xxnumpartie{Cycle 04}
-\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
-
-\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Cinétique et application du Principe Fondamental de la Dynamique}
-
-
-
-
-\def\xxtitreexo{Colle 3 -- Régulateur}%Motorisation du moteur Haibike}
-\def\xxsourceexo{\hspace{.2cm} }%\footnotesize{C. Gamelon \& P. Dubois}}
-
-
-\def\xxposongletx{2}
-\def\xxposonglettext{1.45}
-\def\xxposonglety{20}
-%\def\xxonglet{Part. 1 -- Ch. 3}
-\def\xxonglet{Cycle 04}
-
-\def\xxactivite{Colle 3}
-\def\xxauteur{\textsl{X. Pessoles}}
 
 \def\xxcompetences{%
+\vspace{.25cm}
 \textsl{%
-\textbf{Savoirs et compétences :}\\
-%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
-%\item \textit{Mod2.C13} : centre d'inertie
-%\item \textit{Mod2.C14} : opérateur d'inertie
-%\item \textit{Mod2.C15} : matrice d'inertie
-%\end{itemize}
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{C2-08} :Déterminer les actions mécaniques en dynamique dans le cas où le mouvement est imposé.
+\end{itemize}
 }}
 \def\xxfigures{
-%\includegraphics[width=.7\linewidth]{images/fig_00}
+%\includegraphics[width=.7\linewidth]{fig_00}
 }%figues de la page de garde
 
 
-\def\xxpied{%
-Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
-Chapitre 3 -- \xxactivite%
-}
+\input{\repRel/Style/pagegarde_TD}
+\setcounter{numques}{0}
 
-\setcounter{secnumdepth}{5}
-%---------------------------------------------------------------------------
+\setlength{\columnseprule}{.1pt}
 
-\usepackage{pgfplots}
-\begin{document}
-\def\pathfig{images}
-%\chapterimage{png/Fond_Cin}
-\input{style/new_pagegarde}
-\vspace{5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
+
+\vspace{5.1cm}
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
-\def\pathfig{images}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
 
 \ifprof
 \else
@@ -103,7 +59,7 @@ Les barres \textbf{(1)} et \textbf{(5)} ont une masse $m_i$ et des longueurs $\e
 On donne le paramétrage suivant. 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/param2.png}
+\includegraphics[width=\linewidth]{param2.png}
 \end{center}
 %
 %
@@ -116,15 +72,12 @@ On donne le paramétrage suivant.
 %\fi
 
 
-\subparagraph{}
-\textit{Proposer une matrice d'inertie pour chacun des solides.}
+\question{Proposer une matrice d'inertie pour chacun des solides.}
 
-\subparagraph{}
-\textit{Déterminer les torseurs cinétiques suivants : $\torseurci{1}{0}_O$, $\torseurci{2}{0}_O$.}
+\question{Déterminer les torseurs cinétiques suivants : $\torseurci{1}{0}_O$, $\torseurci{2}{0}_O$.}
 
 
-\subparagraph{}
-\textit{Déterminer les torseurs dynamiques suivants : $\torseurdyn{1}{0}_O$, $\torseurdyn{2}{0}_O$. En déduire $\torseurdyn{1\cup 2}{0}_O$}
+\question{Déterminer les torseurs dynamiques suivants : $\torseurdyn{1}{0}_O$, $\torseurdyn{2}{0}_O$. En déduire $\torseurdyn{1\cup 2}{0}_O$}
 
 
 % et  $\torseurci{3}{0}_O$ dans $\mathcal{R}_1$, $\torseurci{4}{0}_O$ dans $\mathcal{R}_3$  et  $\torseurci{5}{0}_A$ dans $\mathcal{R}_1$.}
@@ -331,16 +284,14 @@ $$
 \else
 \fi
 
-\subparagraph{}
-\textit{Déterminer les torseur dynamique $\torseurdyn{4}{0}_G$.}
+\question{Déterminer les torseur dynamique $\torseurdyn{4}{0}_G$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
 
-\subparagraph{}
-\textit{Déterminer les torseur dynamique $\torseurdyn{1\cup 2\cup 3\cup 4\cup 5}{0}_O$.}
+\question{Déterminer les torseur dynamique $\torseurdyn{1\cup 2\cup 3\cup 4\cup 5}{0}_O$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -348,8 +299,7 @@ $$
 \fi
 
 
-\subparagraph{}
-\textit{Calculer l'énergie cinétique de l'ensemble du système dans son mouvement par rapport au bâti.}
+\question{Calculer l'énergie cinétique de l'ensemble du système dans son mouvement par rapport au bâti.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -359,7 +309,7 @@ $$
 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/Schema_Cin.png}
+\includegraphics[width=\linewidth]{Schema_Cin.png}
 \end{center}
 
 
@@ -370,15 +320,3 @@ $$
 
 
 
-\end{document}
-\begin{center}
-\includegraphics[width=\linewidth]{images/}
-\end{center}
-
-\subparagraph{}
-\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
