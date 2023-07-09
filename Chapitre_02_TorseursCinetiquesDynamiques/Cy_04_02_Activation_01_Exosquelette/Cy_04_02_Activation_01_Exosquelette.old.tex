@@ -1,28 +1,56 @@
-%\setchapterimage{bandeau}
-\chapter*{Application \arabic{cptApplication} \\ 
-Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{\ifcolle Colle \else Activation 1 \fi  \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+%\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Application du Principe Fondamental de la Dynamique}
+
+\def\xxtitreexo{Assistance pour le maniement de charges dans l’industrie}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec TSI 2017}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxcompetences{%
+\vspace{.25cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C16} : torseur cinétique
+%\item \textit{Mod2.C17} : torseur dynamique
+\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%\item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+%\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.3\linewidth]{fig_01}}%figues de la page de garde
+
+\input{\repRel/Style/pagegarde_TD}
+\setcounter{numques}{0}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\vspace{5.2cm}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
+
+
+\ifprof
+\else
+\begin{multicols}{2}
 \fi
-
-\setcounter{question}{0}
-\marginnote{Concours Centrale Supelec TSI 2017.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
-\begin{marginfigure}
-\includegraphics[width=3cm]{fig_01}
-\end{marginfigure}
-
-
-\begin{marginfigure}
-\includegraphics[width=3cm]{fig_02}
-\end{marginfigure}
-
-
 
 \section*{Mise en situation -- Assurer le mouvement vertical}
 \ifprof
@@ -31,14 +59,18 @@ Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \
 \ifprof
 \else
 \noindent
-
+\begin{tabular}{m{.6\linewidth}m{.3\linewidth}}
 L’exosquelette est un appareil qui apporte à un être humain des capacités qu’il ne possède pas ou qu’il a perdues à cause d’un accident. Ce type d’appareil peut permettre à une personne de soulever des charges lourdes et diminuer considérablement les efforts à fournir sans la moindre fatigue. Après avoir revêtu un exosquelette adapté à sa morphologie et à sa taille, l’utilisateur peut faire ses mouvements en bénéficiant
 d’une grande fluidité.
+& 
+\includegraphics[width=\linewidth]{fig_02}
+
+\end{tabular}
 
 
 
 \begin{center}
-\includegraphics[width=.6\linewidth]{Exigences}
+\includegraphics[width=\linewidth]{Exigences}
 %\textit{}
 \end{center}
 \fi
@@ -244,33 +276,15 @@ Dimensionner le moteur situé au niveau d’un genou permettant à l’exosquele
 \else
 Ces calculs visent à déterminer l’équation dynamique qui permet d’obtenir le couple moteur (minimal) en fonction des caractéristiques géométriques et massique de la charge à soulever ainsi que des conditions d’utilisation.
 Le modèle d’étude est celui représenté à la figure suivante correspondant au modèle d’étude plan position fléchie.
-
-
-
-
 \begin{center}
 \includegraphics[width=\linewidth]{fig_03}
 %\textit{}
 \end{center}
 
-
-\begin{marginfigure}[-4cm]
-\includegraphics[width=\linewidth]{fig_14}
+\begin{center}
+\includegraphics[width=.5\linewidth]{fig_14}
 %\textit{}
-\end{marginfigure}
-
-
-\marginnote{\textbf{Données :}
-\begin{itemize}
-\item $\vect{O_1G_4}=\lambda(t)\vect{z_0}-L\cos\theta_{10}\vect{y_0}$;
-\item accélération de la pesanteur $g=\SI{9,81}{m.s^{-2}}$;
-\item longueur de la cuisse $l_1 = \SI{43,1}{cm}$.
-\item longueur de la jambe $l_2 = \SI{43,3}{cm}$.
-\item longueur de l'articulation de la cheville à la plante arrière du pied $l_3 = \SI{6,9}{cm}$.
-\item longueur de la plante arrière du pied au point d’appui sur le sol $l_4 = \SI{13}{cm}$.
-\item longueur $\vect{O_0O_1}=L\vect{y_1}$ avec $L=\SI{51,8}{cm}$.
-\item rapport de réduction : $r=\dfrac{\omega_r}{\omega_m}=\dfrac{1}{120}$.
-\end{itemize}}
+\end{center}
 
 
 \noindent\textbf{Hypothèses :}
@@ -283,7 +297,17 @@ Le modèle d’étude est celui représenté à la figure suivante correspondant
 \item $G_4$, centre de gravité de la charge transportée (4), reste en permanence à la verticale du point $A$ d’appui au sol.
 \end{itemize}
 
-
+\noindent\textbf{Données :}
+\begin{itemize}
+\item $\vect{O_1G_4}=\lambda(t)\vect{z_0}-L\cos\theta_{10}\vect{y_0}$;
+\item accélération de la pesanteur $g=\SI{9,81}{m.s^{-2}}$;
+\item longueur de la cuisse $l_1 = \SI{43,1}{cm}$.
+\item longueur de la jambe $l_2 = \SI{43,3}{cm}$.
+\item longueur de l'articulation de la cheville à la plante arrière du pied $l_3 = \SI{6,9}{cm}$.
+\item longueur de la plante arrière du pied au point d’appui sur le sol $l_4 = \SI{13}{cm}$.
+\item longueur $\vect{O_0O_1}=L\vect{y_1}$ avec $L=\SI{51,8}{cm}$.
+\item rapport de réduction : $r=\dfrac{\omega_r}{\omega_m}=\dfrac{1}{120}$.
+\end{itemize}
 
 On note E=\{cuisse(2)+charge transportée(4)\}. 
 
@@ -356,14 +380,12 @@ Enfin,
 
 \ifprof
 \else
+La loi d'évolution de la vitesse de la hanche est donnée à la figure suivante. 
 
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_11}
+\begin{center}
+\includegraphics[width=.8\linewidth]{fig_11}
 %\textit{}
-\end{marginfigure}
-La loi d'évolution de la vitesse de la hanche est donnée à la figure ci-contre. 
-
+\end{center}
 \fi
 
 \question{Déterminer l’expression littérale du couple $C_r$ exercé par l’arbre de sortie du réducteur sur le genou imposé par la loi d’évolution de la hanche. Calculer numériquement ce couple pour une valeur de $\theta_{10}$ égale à
@@ -429,13 +451,6 @@ Le cycle suivant obtenu à l’aide du modèle multiphysique de représente l’
 et ce en tenant compte du moment d’inertie du rotor, sur un cycle de période $T=\SI{15}{s}$.
 
 
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_12}
-%\textit{}
-\end{marginfigure}
-
-
 \noindent Quatre phases sont définies sur cette période :
 \begin{itemize}
 \item phase 1 pour $0 \leq t < \SI{2}{s}$, valeur efficace du couple moteur $C_1 = \SI{0,838}{Nm}$ ;
@@ -444,6 +459,12 @@ et ce en tenant compte du moment d’inertie du rotor, sur un cycle de période 
 \item phase 4 pour $6 \leq t < \SI{15}{s}$, couple moteur nul.
 \end{itemize}
 
+
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{fig_12}
+%\textit{}
+\end{center}
 
 
 \question{Préciser à quels mouvements correspondent les 4 phases de ce cycle.}
@@ -514,8 +535,11 @@ Su ces deux critères le moteur proposé est donc validé.
 
 \ifcolle
 \else
-\marginnote{
-\begin{solution}
+\noindent 
+\footnotesize
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+Éléments de corrigé :
 \begin{enumerate}
 \item .
 \item $\vectmc{O_1}{E}{0}\cdot \vect{x_0} = -Lm_4\cos\theta_{10}\dot{h}(t)$.
@@ -525,10 +549,16 @@ Su ces deux critères le moteur proposé est donc validé.
 \item ...
 \item ...
 \item $C_{\text{eff}} \simeq \SI{0,546}{Nm}$.
-\end{enumerate}
-\end{solution}
-}
+\end{enumerate} \\
+\hline
+\end{tabular}
+\normalsize
 \fi
+\fi
+
+\ifprof
+\else
+\end{multicols}
 \fi
 
 
@@ -547,8 +577,14 @@ Su ces deux critères le moteur proposé est donc validé.
 
 
 \begin{center}
-\includegraphics[width=\linewidth]{fig_15}
+\includegraphics[width=.7\linewidth]{fig_15}
 %\textit{}
 \end{center}
 \fi
+
+%\begin{center}
+%\includegraphics[width=.65\linewidth]{cor_01}
+%%\textit{}
+%\end{center}
+
 
