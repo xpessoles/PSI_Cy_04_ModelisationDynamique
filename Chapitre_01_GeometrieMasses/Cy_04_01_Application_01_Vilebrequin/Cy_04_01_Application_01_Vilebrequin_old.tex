@@ -1,28 +1,62 @@
-\setchapterimage{bandeau}
-\chapter*{Application \arabic{cptApplication} \\ 
-Vilebrequin de moteur -- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Vilebrequin de moteur -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Application 1 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Caractéristation inertielle des solides}
+%
+\def\xxtitreexo{Application -- Vilebrequin de moteur}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{C. Gamelon \& P. Dubois}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item B2-10 : Déterminer les caractéristiques d'un solide ou d'un ensemble de solides indéformables.
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.7\linewidth]{fig_00}
+}%figues de la page de garde
+
+
+\input{\repRel/Style/pagegarde_TD}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{5.2cm}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{numques}{0}
+
+\ifprof
+%\begin{multicols}{2}
+\else
+\begin{multicols}{2}
 \fi
 
-\setcounter{question}{0}
-\marginnote{C. Gamelon \& P. Dubois.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{B2-10}
-}
-\begin{marginfigure}
-\includegraphics[width=4cm]{fig_00}
-\end{marginfigure}
 
 \ifprof
 \else
 Un vilebrequin est réalisé en mécanosoudage pour faire fonctionner un prototype de moteur. Les géométries sont par conséquent simples : assemblage de tôles ou cylindres en acier.
 
-\marginnote{On note :
+\begin{center}
+\includegraphics[width=\linewidth]{fig_01}
+\end{center}
+L'origine $O$ repère $\mathcal{R}$ est située dans le plan de contact du cylindre 1 et du parallélépipède 2.
+
+On note $\rho=\SI{7200}{kg.m^{3}}$ la masse volumique du matériau et on donne :
+\begin{multicols}{2}
 \begin{itemize}
-\item $\rho=\SI{7200}{kg.m^{3}}$ la masse volumique du matériau;
 \item $a = \SI{20}{mm}$;
 \item $b = \SI{30}{mm}$;
 \item $e = \SI{5}{mm}$;
@@ -32,13 +66,8 @@ Un vilebrequin est réalisé en mécanosoudage pour faire fonctionner un prototy
 \item $r_4 = \SI{7.5}{mm}$;
 \item $h = \SI{20}{mm}$.
 \end{itemize}
-}
-
-\begin{center}
-\includegraphics[width=7cm]{fig_01}
-\end{center}
-L'origine $O$ repère $\mathcal{R}$ est située dans le plan de contact du cylindre 1 et du parallélépipède 2.
-
+\end{multicols}
+\fi
 
 \question{Calculer les masses des différentes pièces: $m_1$, $m_2$, $m_3$ et $m_4$.}
 
@@ -157,6 +186,10 @@ $J_{\Delta}= \left( Bb-Dc\right)u_y + \left( -Db +Cc\right)u_z$
 
 %\section*{Présentation du support du cours du cours}
 
+\ifprof
+\else
+\end{multicols}
+\fi
 %
 %\newpage
 %Question 2 : Position des centres de gravité:
