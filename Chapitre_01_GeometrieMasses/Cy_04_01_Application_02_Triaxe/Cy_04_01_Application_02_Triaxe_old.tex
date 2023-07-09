@@ -1,27 +1,59 @@
-%\setchapterimage{bandeau}
-\chapter*{Application \arabic{cptApplication} \\ 
-Triaxe -- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Triaxe -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Application 1 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Caractérisation inertielle des solides}
+
+\def\xxtitreexo{Application 2}%Motorisation du moteur Haibike}
+\def\xxsourceexo{ \hspace{.2cm} \footnotesize{X. Pessoles}}
+
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{Mod2.C13} : centre d'inertie
+\item \textit{Mod2.C14} : opérateur d'inertie
+\item \textit{Mod2.C15} : matrice d'inertie
+\end{itemize}
+}}
+\def\xxfigures{
+%\includegraphics[width=.7\linewidth]{triaxe}
+}%figues de la page de garde
+
+
+\input{\repRel/Style/pagegarde_TD}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\vspace{5.2cm}
+
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{numques}{0}
+
+
+\ifprof
+\else
+\begin{multicols}{2}
 \fi
 
-\setcounter{question}{0}
-%\marginnote{}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{B2-10}
-}
-\begin{marginfigure}[3cm]
-\includegraphics[width=4cm]{triaxe.png}
-\end{marginfigure}
 
-
-
+\section*{Triaxe}
+\setcounter{exo}{0}
 On donne le plan d'un triaxe constitué des 3 axes $A_1$, $A_2$, $A_3$ et du moyeu central noté $M$. On note  $T$ l'ensemble.
 
 \begin{center}
-\includegraphics[width=8cm]{triaxe.png}
+\includegraphics[width=\linewidth]{triaxe.png}
 \end{center}
 On note :
 \begin{itemize}
@@ -44,7 +76,7 @@ $\alpha_3=\angl{x}{x_3}=-30\degres$.
 On donne ci-dessous le paramétrage d'un axe $A_i$.
 
 \begin{center}
-\includegraphics[width=7cm]{param.png}
+\includegraphics[width=.8\linewidth]{param.png}
 \end{center}
 \question{Déterminer (sans calcul) la position du centre de gravité du triaxe. }
 \ifprof
@@ -366,4 +398,24 @@ $\inertie{O}{A_i}_{\rep{}}=\matinertie{f(\alpha)}{g(\alpha)}{h(\alpha)}{0}{0}{fg
 %
 %
 
+
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
+%
+%\end{document}
+%\begin{center}
+%\includegraphics[width=\linewidth]{}
+%\end{center}
+%
+%\subparagraph{}
+%\textit{}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
 
