@@ -1,31 +1,78 @@
-%\setchapterimage{bandeau}
-\chapter*{Application \arabic{cptApplication} \\ 
-Régulateur centrifuge -- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Régulateur centrifuge -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Application 1 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+%\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Application du Principe Fondamental de la Dynamique}
+
+\def\xxtitreexo{Application -- Régulateur centrifuge}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{C. Gamelon \& P. Dubois}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxcompetences{%
+\vspace{.25cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{Mod2.C13} : centre d'inertie;
+\item \textit{Mod2.C14} : opérateur d'inertie;
+\item \textit{Mod2.C15} : matrice d'inertie.
+\end{itemize}
+}}
+%%\item \textit{Mod2.C16} : torseur cinétique
+%%\item \textit{Mod2.C17} : torseur dynamique\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%%\item \textit{Mod2.C15} : matrice d'inertie
+%%\item \textit{Res1.C2} : principe fondamental de la dynamique
+%%\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+
+\def\xxfigures{
+\includegraphics[width=.5\linewidth]{fig_00}}%figues de la page de garde
+
+
+\input{\repRel/Style/pagegarde_TD}
+\setcounter{numques}{0}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{5.1cm}
+\else
+\vspace{5.2cm}
 \fi
 
-\setcounter{question}{0}
-\marginnote{C. Gamelon \& P. Dubois.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
-\begin{marginfigure}[4cm]
-\includegraphics[width=\linewidth]{fig_00}
-\end{marginfigure}
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
 
 
-\begin{marginfigure}[10cm]
-\includegraphics[width=\linewidth]{fig_02}
-\end{marginfigure}
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+
 
 On considère le mécanisme de la figure ci-contre, qui représente le régulateur centrifuge utilisé dans la direction assistée << DIRAVI >> de CITROËN. Ce système, dont la fréquence de rotation est liée à la vitesse du véhicule, agit sur un circuit hydraulique et permet de faire varier l’assistance en fonction de la vitesse.
-Considérons uniquement le rotor \textbf{($S_1$)} et la masselotte \textbf{($S_2$)} représentés schématiquement ci-contre.
+Considérons uniquement le rotor \textbf{($S_1$)} et la masselotte \textbf{($S_2$)} représentés schématiquement ci-dessous.
 
-\begin{multicols}{2}
+\ifprof
+\begin{center}
+\includegraphics[width=.5\linewidth]{fig_02}
+\end{center}
+\else
+\begin{center}
+\includegraphics[width=\linewidth]{fig_02}
+\end{center}
+\fi
+
 \begin{itemize}
 \item \textbf{($S_1$)} est en liaison pivot d'axe $\axe{O_1}{z_0}$ avec \textbf{($S_0$)}.
 \item \textbf{($S_2$)} est en liaison pivot d'axe $\axe{O_2}{x_1}$ avec \textbf{($S_1$)}.
@@ -35,8 +82,6 @@ Considérons uniquement le rotor \textbf{($S_1$)} et la masselotte \textbf{($S_2
 \item $\vect{O_0O_2}=d_1\vect{z_0}+L_1\vect{y_1}$.
 \item $\vect{O_2G_2}=L_2\vect{y_2}$.
 \end{itemize}
-\end{multicols}
-
 Pour chacun des solides $S_i$ on note $m_i$ la masse, $\inertie{G_i}{S_i}=\matinertie{A_i}{B_i}{C_i}{-D_i}{-E_i}{-F_i}{B_i}$.
 
 On note $E=\left\{ S_1,S_2\right\}$. 
@@ -48,7 +93,7 @@ Une vue 3D de la masselotte est donnée ci-dessous.
 \end{center}
 \else
 \begin{center}
-\includegraphics[width=.7\linewidth]{fig_03}
+\includegraphics[width=\linewidth]{fig_03}
 \end{center}
 \fi
 
@@ -64,11 +109,17 @@ Le solide 2 admet le plan $\angl{y_2}{z_2}$ comme plan de symétrie. Les produit
 \fi
 
 
-Afin de moins alourdir les calculs, on suppose constantes les vitesse de rotation $\dot{\theta}_1$ et $\dot{\theta}_2$.
+Afin de ne pas trop alourdir les calculs, on suppose constantes les vitesse de rotation $\dot{\theta}_1$ et $\dot{\theta}_2$.
 
 \question{Discuter de la pertinence de ces hypothèses. Vous pourrez éventuellement les remettre en cause. }
 
-\question{Déterminer le torseur dynamique $\torseurdyn{S_1}{R_0}$ en $O_1$ et le torseur dynamique  $\torseurdyn{S_2}{R_0}$ en $O_2$.}
+\question{Déterminer :}\textit{
+\begin{itemize}
+\item le torseur dynamique $\torseurdyn{S_1}{R_0}$ en $O_1$;
+\item le torseur dynamique  $\torseurdyn{S_2}{R_0}$ en $O_2$.
+%\item le torseur dynamique  $\torseurdyn{E}{R_0}$ en $O_2$;
+%\item et enfin l’énergie cinétique de (E) par rapport à (R0).
+\end{itemize}}
 
 \ifprof
 \begin{corrige}~\\
@@ -284,16 +335,21 @@ $\left[\dfrac{\dd}{\dd t}\inertie{G_2}{S_2}\vecto{S_2}{R_0} \cdot \vect{x_2} \ri
 
 \question{Donner une méthode qui permettrait d'obtenir le couple moteur nécessaire à la mise en mouvement du régulateur.}
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{Cm_SansFrottement.png}
-\includegraphics[width=\linewidth]{Cm_Frottement.png}
-\end{marginfigure}
-
 Pour mettre en mouvement le régulateur on réalise une montée en vitesse de 0 à 2000 tours par minute en 0,5 seconde.  On reste ensuite à vitesse constante. On donne le résultats de deux simulation permettant de calculer le couple nécessaire à la mise en mouvement du régulateur: la première sans frottement dans la liaison entre $S_1$ et $S_2$ (couple maximal \SI{0,46}{Nm}) , une seconde avec frottement (couple maximal \SI{0,1}{Nm}). 
 
 \question{Commenter ces résultats. }
 
 
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+\begin{center}
+\includegraphics[width=.48\linewidth]{Cm_SansFrottement.png}
+\includegraphics[width=.48\linewidth]{Cm_Frottement.png}
+\end{center}
 
 
 %\newpage
