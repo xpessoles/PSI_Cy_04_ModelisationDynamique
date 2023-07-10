@@ -1,24 +1,60 @@
-%\setchapterimage{bandeau}
-\chapter*{Application \arabic{cptApplication} \\ 
-Assistance pour le maniement de charges dans l’industrie -- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Le robot humanoïde Lola -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Activation 3 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+%\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Application du Principe Fondamental de la Dynamique}
+
+\def\xxtitreexo{Le robot humanoïde Lola}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Mines Ponts -- PSI 2015}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxcompetences{%
+\vspace{.25cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C16} : torseur cinétique
+%\item \textit{Mod2.C17} : torseur dynamique
+\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%\item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+%\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.5\linewidth]{fig_00}}%figues de la page de garde
+
+
+\input{\repRel/Style/pagegarde_TD}
+\setcounter{numques}{0}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{5.1cm}
+\else
+\vspace{5.2cm}
 \fi
 
-\setcounter{question}{0}
-\marginnote{Concours Mines Ponts -- PSI 2015.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_00}
-\end{marginfigure}
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
 
 
 
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 
 \subsection*{Mise en situation}
 
@@ -50,29 +86,9 @@ angulaire absolu et chaque pied est muni d’un capteur d’effort 6 axes permet
 avec le sol. Les caractéristiques techniques de LOLA sont données dans le tableau suivant.
 
 
-\begin{marginfigure}
-%\begin{table}
-\footnotesize
-\centering
-\begin{tabular}{ll}
-\hline
-\textbf{Caractéristiques} & \textbf{Valeurs} \\
-\hline
-Hauteur & \SI{180}{cm} \\
-Masse & \SI{55}{kg} \\
-Nombre de degrés  & 25 \\
-de liberté & \\
-Vitesse de marche & \SI{5}{km.h^{-1}} maxi \\ 
-Hauteur du centre & \SI{105}{cm} \\
-de gravité  & \\
-\hline
-\end{tabular}
-\normalsize
-
-%\includegraphics[width=\linewidth]{fig_01_a}
-%\end{table}
-\end{marginfigure}
-
+\begin{center}
+\includegraphics[width=\linewidth]{fig_01_a}
+\end{center}
 \fi
 
 \subsection*{Stabilité du robot}
@@ -87,47 +103,29 @@ Lorsque le robot marche, il y a une phase où il n'est en appui que sur un seul
 pied. Dans ce cas, le polygone de sustentation est réduit à un seul pied.
 
 
-\begin{marginfigure}
-\centering
-\includegraphics[width=5cm]{fig_01}
-\end{marginfigure}
+\begin{center}
+\includegraphics[width=.5\linewidth]{fig_01}
+\end{center}
 \fi
 \begin{obj}
 L’objectif de cette partie est de trouver à quelle condition le maintien du contact sur le sol est possible lorsque
 le robot marche et si l'accélération est compatible avec le cahier des charges, dont un extrait est donné ciaprès.
 \end{obj}
 
-%\begin{center}
-%\includegraphics[width=\linewidth]{fig_02}
-%\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{fig_02}
+\end{center}
 
 
 \ifprof
 \else
 
-\begin{marginfigure}
-\centering
-\includegraphics[width=5cm]{fig_03}
-\end{marginfigure}
-
-\begin{tabular}{ll}
-\hline
-\multicolumn{2}{l}{Exigence 1.3 : Le robot ne doit pas bsaculer lors de la marche} \\
-\multicolumn{2}{l}{Description : la position du ZMP reste dans le polygone de sustentation} \\
-\hline
-\multicolumn{2}{l}{Exigence 1.1 : Le robot doit pouvoir attendre les performances cibles} \\
-1.1.4 & La longueur d'une foulée est de \SI{150}{cm} au maximum \\
-1.1.3 & Le robot peut accélérer jusqu'à \SI{1,39}{m.s^{-2}} \\
-\hline
+Le contact du pied sur le sol est modélisé sans frottement sur la figure suivante.
 
 
-\hline
-\end{tabular}
-
-Le contact du pied sur le sol est modélisé sans frottement sur la figure ci-contre.
-
-
-
+\begin{center}
+\includegraphics[width=\linewidth]{fig_03}
+\end{center}
 \fi
 
 \subsection*{Modélisation de l’effort de contact entre le sol et le robot}
@@ -253,11 +251,6 @@ translation vers l’avant (suivant $+\vect{y_0}$). Le robot est toujours dans l
 phase d'appui d'un seul pied sur le sol, via une des deux jambes notées
 (2).
 
-
-\begin{marginfigure}
-\includegraphics[width=5cm]{fig_04}
-\end{marginfigure}
-
 Données et paramètres :
 \begin{itemize}
 \item Torse (1) :
@@ -277,6 +270,9 @@ où : $H_S$ est le ZMP, point mis en évidence à la question 2 tel que $\vect{O
 \end{itemize}
 \end{itemize}
 
+\begin{center}
+\includegraphics[width=.4\linewidth]{fig_04}
+\end{center}
 \fi
 
 \question{En appliquant le théorème du moment dynamique, puis le théorème de la résultante dynamique au
@@ -363,5 +359,28 @@ On isole (1+2) et on réalise le TRD :
 $\left[\dfrac{\dd^2 Y_G(t)}{\dd t^2}\right]_{\text{max}} = \mu  g = 0,1\times 9,81 = \SI{0,981}{m.s^{-2}} < \SI{1,39}{m.s^{-2}}$. L'exigence 1.1.3 n'est pas respectée. 
 \end{corrige}
 \else
+\fi
+
+
+
+\ifprof
+\else
+
+\footnotesize
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+\begin{enumerate}
+\item .
+\item .
+\item .
+\item .
+\item .
+\item .
+\end{enumerate}
+\\
+\hline
+\end{tabular}
+\normalsize
+\end{multicols}
 \fi
 
