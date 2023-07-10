@@ -1,30 +1,53 @@
-%\setchapterimage{bandeau}
-\chapter*{Colle \arabic{cptColle} \\ 
-Porte outil -- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Colle \arabic{cptColle} : Porte outil -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Colle 01 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptColle} \else
-\ifprof  \stepcounter{cptColle} \else \fi
-\fi
 
-\setcounter{question}{0}
-%\marginnote{Mines Ponts 2018 -- PSI.}
-\marginnote{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
-%\begin{marginfigure}[4cm]
-%\centering
+\def\xxtitreexo{Porte-outil}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{}}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxcompetences{%
+\vspace{.25cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{C2-08} :Déterminer les actions mécaniques en dynamique dans le cas où le mouvement est imposé.
+\end{itemize}
+}}
+\def\xxfigures{
 %\includegraphics[width=.7\linewidth]{fig_00}
-%\end{marginfigure}
+}%figues de la page de garde
 
+
+\input{\repRel/Style/pagegarde_TD}
+\setcounter{numques}{0}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{5.1cm}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
 
 Le dispositif porte-outil d'une machine d'affûtage est composé de trois solides \textbf{1}, \textbf{2} et \textbf{3}. 
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_01}
-\end{marginfigure}
-
+\end{center}
 Le repère $\mathcal{R}_0=\repere{O}{x_0}{y_0}{z_0}$, avec $\axe{O}{\vect{z_0}}$ vertical ascendant, est lié au bâti \textbf{0} de la machine. Il est supposé galiléen. Toutes les liaisons sont supposées parfaites.
 
 Le repère $\mathcal{R}_1=\repere{O}{x_1}{y_1}{z_0}$ est lié au support tournant \textbf{1} en liaison pivot d'axe $\axe{O}{z_0}$ avec le bâti \textbf{0}. La position de \textbf{1} par rapport à l'axe $\axe{O}{z_0}$ est repérée par $\alpha=\angl{x_0}{x_1}=\angl{y_0}{y_1}$. 
@@ -52,6 +75,10 @@ On note $m_3$ la masse de \textbf{(3)}, de centre d'inertie $G$ de matrice d'ine
 \question{Calculer le moment dynamique en $O$ appliqué à l'ensemble \textbf{\{1, 2, 3\}} en mouvement par rapport à $\mathcal{R}_0$ en projection sur $\vect{z_0}$.}
 
 
+\ifprof
+\else
+\end{multicols}
+\fi
 
 \ifprof
 \begin{enumerate}
@@ -68,6 +95,7 @@ $\quad +\left(\ddot{r}-r\dot{\beta}^2 \right)\vect{z_2}$.
 \else
 \fi
 
+\newpage
 
 \ifprof
 \begin{center}
