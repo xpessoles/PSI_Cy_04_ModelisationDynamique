@@ -7,6 +7,8 @@ Vilebrequin de moteur -- \ifprof Corrigé \else Sujet \fi}
 \ifprof  \stepcounter{cptApplication} \else \fi
 \fi
 
+
+
 \setcounter{question}{0}
 \marginnote{C. Gamelon \& P. Dubois.}
 \marginnote[1cm]{
@@ -38,6 +40,8 @@ Un vilebrequin est réalisé en mécanosoudage pour faire fonctionner un prototy
 \includegraphics[width=7cm]{fig_01}
 \end{center}
 L'origine $O$ repère $\mathcal{R}$ est située dans le plan de contact du cylindre 1 et du parallélépipède 2.
+
+\fi
 
 
 \question{Calculer les masses des différentes pièces: $m_1$, $m_2$, $m_3$ et $m_4$.}
@@ -109,6 +113,7 @@ $\inertie{G_3}{S_3}=\matinertie{A_3}{B_3}{C_3}{0}{0}{0}{R}$
 $\inertie{G_4}{S_4}=\matinertie{A_4}{A_4}{C_4}{0}{0}{0}{R}$
 \end{corrige}\else\fi
 
+
 \question{Donner les formes de matrices d’inertie du vilebrequin en $O$ dans la base $\base{x}{y}{z}$.}
 
 \ifprof \begin{corrige}
@@ -152,7 +157,9 @@ $=\begin{pmatrix} 0 & u_y &  u_z \end{pmatrix}
 
 $J_{\Delta}= \left( Bb-Dc\right)u_y + \left( -Db +Cc\right)u_z$
 
-\end{corrige}\else\fi
+\end{corrige}
+\else\fi
+
 
 
 %\section*{Présentation du support du cours du cours}
