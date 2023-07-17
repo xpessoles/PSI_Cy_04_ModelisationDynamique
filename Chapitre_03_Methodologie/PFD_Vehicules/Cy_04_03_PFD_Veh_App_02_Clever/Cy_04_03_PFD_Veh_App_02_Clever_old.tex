@@ -1,24 +1,64 @@
-%\setchapterimage{bandeau}
-\chapter*{Application \arabic{cptApplication} \\ 
-Dynamique du véhicule -- Véhicule à trois roues Clever\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi 
--- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : 
-Dynamique du véhicule -- Véhicule à trois roues Clever\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi 
--- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{\ifcolle Colle \else TD 2 \fi  \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Méthodologie : détermination des équations de mouvement}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+
+
+\def\xxtitreexo{Dynamique du véhicule -- Véhicule à trois roues Clever\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
+
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Banque PT -- SIA 2013}}
+
+
+\def\xxcompetences{%
+%\vspace{-.5cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C16} : torseur cinétique
+%\item \textit{Mod2.C17} : torseur dynamique
+%\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%\item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.5\linewidth]{fig_00}
+}%figues de la page de garde
+
+
+\input{\repRel/Style/pagegarde_TD}
+\setcounter{numques}{0}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{4.8cm}
+\else
+\vspace{4.8cm}
 \fi
 
-\setcounter{question}{0}
-\marginnote{Concours Banque PT -- SIA 2013.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_00}
-\end{marginfigure}
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
+\ifprof
+%\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
+
 
 
 
@@ -34,35 +74,35 @@ est un démonstrateur technologique développé par un tissu d'industriels europ
 %La \autoref{fig_02} présente un diagramme partiel des interacteurs, issu de l'analyse fonctionnelle du besoin dans la phase d'utilisation normale (véhicule Clever utilisé pour se déplacer). Le Tableau \autoref{tab_01} décrit les fonctions de service correspondantes. À l'issue de l'analyse fonctionnelle technique, les solutions qui ont été retenues sont les suivantes : 
 Il se présente comme un véhicule à trois roues pouvant embarquer deux personnes assises en tandem. Il adopte une architecture pendulaire, c'est-à-dire qu'il se penche dans les virages (cf. \autoref{fig_03}). Le déplacement du centre de gravité qui en résulte lui confère une grande stabilité malgré une faible largeur du véhicule (légèrement inférieure à \SI{1}{m}, contre 60 à \SI{75}{cm} pour une moto, et \SI{1,5}{m} pour une petite voiture). Cette étroitesse se veut une réponse aux problèmes d'encombrement dans les villes mais permet aussi une surface frontale moins importante que sur une voiture conventionnelle et donc des pertes aérodynamiques réduites. En outre, les sensations de conduite sont semblables à celle d'une moto mais avec un pilotage, à l'aide d'un volant, propre à un véhicule à 4 roues. Le moteur est un monocylindre à gaz naturel qui a été développé par l'IFP et dont les performances permettent d'atteindre une vitesse de pointe de $\SI{100}{km.h^{-1}}$ avec une accélération en phase avec les attentes pour un véhicule urbain.
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_02}
 
-\caption{Diagramme partiel des interacteurs dans la phase d'utilisation normale}
+\textit{Diagramme partiel des interacteurs dans la phase d'utilisation normale}
 \label{fig_02}
-\end{marginfigure}
+\end{center}
 
-\begin{figure}[!h]
-\includegraphics[width=.8\linewidth]{tab_01}
+\begin{center}
+\includegraphics[width=\linewidth]{tab_01}
 
-\caption{Caractérisation partielle des fonctions de service}
+\textit{Caractérisation partielle des fonctions de service}
 \label{tab_01}
-\end{figure}
+\end{center}
 
 Du point de vue de l'architecture cinématique (cf. \autoref{fig_03}), le groupe motopropulseur est placé à l'arrière. À l'avant, l'habitacle repose sur une roue de moto et pivote par rapport au bloc arrière autour d'une liaison pilotée angulairement par le biais de deux vérins hydrauliques. L'inclinaison est contrôlée par un ordinateur de bord en fonction de l'angle au volant et de la vitesse. Le Tableau \autoref{tab_02} regroupe les caractéristiques techniques annoncées par l'équipe de développement.
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_03}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{fig_03}
 
-\caption{Vue de la cinématique pendulaire}
+\textit{Vue de la cinématique pendulaire}
 \label{fig_03}
-\end{marginfigure}
+\end{center}
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{tab_02}
 
-\caption{Caractéristiques techniques}
+\textit{Caractéristiques techniques}
 \label{tab_02}
-\end{marginfigure}
+\end{center}
 
 
 %
@@ -83,7 +123,7 @@ Du point de vue de l'architecture cinématique (cf. \autoref{fig_03}), le groupe
 % \dfrac{\pi^2}{2}\dfrac{100}{4}\left(5+3\times10^{-2}\right)g \simeq \dfrac{10}{2}\times 4 \times 5 \times 10 = \SI{1000}{m.s^{-2}}.
 % $$
 
-\section*{Validation de la fonction technique « Modifier l'inclinaison de l'habitacle »}
+\section{Validation de la fonction technique « Modifier l'inclinaison de l'habitacle »}
 \begin{obj}
 Dans cette partie, on s'intéresse à la fonction technique « Modifier l'inclinaison de l'habitacle » qui a été proposée pour assurer les fonctions de service FS1 «Permettre à l'utilisateur de se déplacer sur le sol » et FS3 « S'insérer facilement dans le trafic » du Tableau \autoref{tab_01} donné en introduction. Ce choix doit en effet permettre de garantir la stabilité du Clever dans les virages tout en permettant une faible largeur du véhicule afin de s'insérer dans la circulation.
 \end{obj}
@@ -115,18 +155,18 @@ On donne ci-dessous deux extraits du cahier des charges relatifs aux fonctions d
 %Les dérivées première et seconde d'une quantité $x(t)$ par rapport au temps sont notées 
 %$\dot{x}(t)=\dfrac{\dd x(t)}{\dd t}$ et $\ddot{x}(t)=\dfrac{\dd^2 x(t)}{\dd t^2}$.
 
-\subsection*{Conditions de non renversement et d'adhérence}
+\subsection{Conditions de non renversement et d'adhérence}
 On se propose maintenant d'étudier l'influence du mécanisme d'inclinaison de l'habitacle du Clever sur la stabilité de celui-ci dans les virages. En particulier, on va montrer que cette technologie pendulaire lui permet d'avoir une largeur faible, comparée à une voiture qui n'est pas équipée de cette technologie, tout en assurant un non renversement à vitesse élevée.
 
 Le mécanisme d'inclinaison peut être décrit globalement par la \autoref{fig_1_1}. Le groupe motopropulseur, comportant entre autres le moteur et les roues arrière, reste en permanence perpendiculaire au sol. La partie avant, constituée de l'habitacle et de la roue avant, peut au contraire s'incliner dans les virages grâce à un mécanisme hydraulique qui sera étudié ultérieurement dans le sujet. Les deux parties du Clever sont reliées par une liaison pivot d'axe parallèle au sol, schématisée sur la \autoref{fig_1_1}.
 
-\begin{marginfigure}%[H]
+\begin{center}%[H]
 %\centering
-\includegraphics[width=\linewidth]{fig_1_1}
+\includegraphics[width=0.75\linewidth]{fig_1_1}
 
-\caption{Présentation du mécanisme d'inclinaison}
+\textit{Présentation du mécanisme d'inclinaison}
 \label{fig_1_1}
-\end{marginfigure}
+\end{center}
 
 
 Pour simplifier l'étude, on ne s'intéresse pas dans un premier temps à la roue avant, ce qui permet de se ramener au système schématisé sur la \autoref{fig_1_2}. On donne les caractéristiques géométriques et cinématiques suivantes :
@@ -166,15 +206,15 @@ On se place dans un cas où le rayon de courbure $R_C$ de la trajectoire du poin
 \else
 \fi
 
+On 
 
-
-\begin{figure}[H]
+\begin{center}%[H]
 \centering
 \includegraphics[width=0.75\linewidth]{fig_1_2_all}
 
-\caption{Modélisation simplifiée du Clever en position inclinée}
+\textit{Modélisation simplifiée du Clever en position inclinée}
 \label{fig_1_2}
-\end{figure}
+\end{center}
  
  \textbf{On néglige le contact entre la roue avant et le sol.}
  
@@ -217,7 +257,7 @@ On se place dans un cas où le rayon de courbure $R_C$ de la trajectoire du poin
  
  
  
-\subsection*{Cas d'un véhicule sans architecture pendulaire}
+\subsection{Cas d'un véhicule sans architecture pendulaire}
  Afin de montrer l'intérêt de l'architecture pendulaire comme solution technique à la fonction de service FS3 «~S'insérer facilement dans la circulation~», on imagine maintenant que le véhicule Clever n'en est pas équipé, ce qui se traduit par la condition $\alpha = 0$.
  
  
@@ -253,20 +293,10 @@ On se place dans un cas où le rayon de courbure $R_C$ de la trajectoire du poin
 \else
 \fi
 
-\begin{marginfigure}%[H]
-\centering
-\includegraphics[width=\linewidth]{fig_1_3}
 
-\caption{Représentation graphique de la condition de non renversement}
-\label{fig_1_3}
-\end{marginfigure}
-
-\subsection*{Cas d'un véhicule à architecture pendulaire}
+\subsection{Cas d'un véhicule à architecture pendulaire}
 
 On considère maintenant l'architecture pendulaire. L'angle a peut varier dans la plage $[- 45\degres, 45\degres]$.
-
-Le graphique de la \autoref{fig_1_3}, représente, en fonction de l'angle d'inclinaison $\alpha$ et dans la configuration précédente (même géométrie et rayon de courbure $R_c = \SI{20}{m}$), l'évolution de vitesse maximale $V$ en dessous de laquelle il n'y a pas renversement.
-
 
 \question{Commenter le signe de l'angle $\alpha$ pour contribuer au non renversement du Clever dans la configuration de la 
 \autoref{fig_1_2} (virage à gauche). Le véhicule doit-il s'incliner vers l'intérieur ou vers l'extérieur de la trajectoire (comme c'est le cas sur la \autoref{fig_1_2} en bas à droite) ? }
@@ -276,11 +306,29 @@ Le graphique de la \autoref{fig_1_3}, représente, en fonction de l'angle d'incl
 \else
 \fi
 
+Le graphique de la \autoref{fig_1_3}, représente, en fonction de l'angle d'inclinaison $\alpha$ et dans la configuration précédente (même géométrie et rayon de courbure $R_c = \SI{20}{m}$), l'évolution de vitesse maximale $V$ en dessous de laquelle il n'y a pas renversement.
+
+
 
 \question{En utilisant la \autoref{fig_1_3}, déterminer l'angle d'inclinaison a qu'il faut imposer à l'habitacle pour respecter la norme. }
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
+\fi
+
+\begin{center}%[H]
+\centering
+\includegraphics[width=0.65\linewidth]{fig_1_3}
+
+\textit{Représentation graphique de la condition de non renversement}
+\label{fig_1_3}
+\end{center}
+
+
+\ifprof
+%\end{multicols}%
+\else
+\end{multicols}%
 \fi
 

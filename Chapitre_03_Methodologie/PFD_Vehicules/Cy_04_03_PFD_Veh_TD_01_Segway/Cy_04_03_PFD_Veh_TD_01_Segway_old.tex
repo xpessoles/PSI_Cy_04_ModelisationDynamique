@@ -1,24 +1,63 @@
-%\setchapterimage{bandeau}
-\chapter*{Application \arabic{cptApplication} \\ 
-Dynamique du véhicule -- Segway de première génération\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi 
--- \ifprof Corrigé \else Sujet \fi}
-\addcontentsline{toc}{section}{Application \arabic{cptApplication} : 
-Dynamique du véhicule -- Segway de première génération\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi 
--- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{\ifcolle Colle \else TD 3 \fi  \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
-\iflivret \stepcounter{cptApplication} \else
-\ifprof  \stepcounter{cptApplication} \else \fi
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Méthodologie : détermination des équations de mouvement}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+
+
+%\def\xxauteur{\textsl{Frédéric Sollner}}
+%
+% \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
+%\def\xxtitreexo{ }
+%
+
+
+\def\xxtitreexo{Dynamique du véhicule -- Segway de première génération\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
+
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Frédéric SOLLNER -- Lycée Mermoz -- Montpellier}}
+
+
+\def\xxcompetences{%
+%\vspace{-.5cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C16} : torseur cinétique
+%\item \textit{Mod2.C17} : torseur dynamique
+%\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%\item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.3\textwidth]{fig_01}
+}%figues de la page de garde
+
+
+\input{\repRel/Style/pagegarde_TD}
+\setcounter{numques}{0}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{4.8cm}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\setcounter{exo}{0}
+\ifprof
+%\begin{multicols}{2}
+\else
+\begin{multicols}{2}
 \fi
-
-\setcounter{question}{0}
-\marginnote{Frédéric SOLLNER -- Lycée Mermoz -- Montpellier.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_01}
-\end{marginfigure}
 
 \section*{Présentation}
 \ifprof
@@ -30,10 +69,10 @@ Le support de l’étude est le véhicule auto balancé Segway®. Il s’agit d�
 	
 	La seconde génération de Segway a vu apparaître une technologie appelée LeanSteer avec guidon inclinable qui permet de faire tourner le Segway lorsque l'utilisateur penche son corps sur le côté (non étudié dans cet exercice).
 
-\begin{marginfigure}
+\begin{center}
 \includegraphics[width=\linewidth]{fig_02}
 %\textit{Modèle volumique 3D}
-\end{marginfigure}
+\end{center}
 
 
 On donne les caractéristiques géométriques et cinématiques suivantes :
@@ -299,8 +338,6 @@ CDCF Validé.
 \ifcolle
 \else
 \footnotesize
-\marginnote{
-\begin{solution}[-5cm]
 \begin{enumerate}
 \item $\vect{V\left(G_E /\rep{0}\right)}=-R_C\dot{\theta}\vect{x_1}$ et $V_L=R_C\dot{\theta}$.
 \item $\vect{\Gamma \left(G_E /\rep{0}\right)}=-R_C\dot{\theta}^2\vect{y_1}$.
@@ -314,10 +351,17 @@ CDCF Validé.
 \item $N_A\geq0$.
 \item  $V_L  \leq \SI{6,38}{m.s^{-1}}=\SI{22,9}{km.h^{-1}}$
 \end{enumerate}
-\end{solution}
-\normalsize}
+\normalsize
 \fi
 \else
 \fi
 
 \fi
+
+\ifprof
+%\end{multicols}
+\else
+\end{multicols}
+\fi
+
+
