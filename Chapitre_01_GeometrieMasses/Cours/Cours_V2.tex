@@ -100,8 +100,7 @@ On appelle matrice d'inertie du solide $S$ en $O$, $\inertie{O}{S}$, l'image de 
 \begin{defi}[Matrice d'inertie]
 La matrice d'inertie s'écrit ainsi : 
 $$
-\inertie{O}{S}=\matinertie{\int\limits_{S} \left(y_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + y_p^2 \right)\,\dd m}{-\int\limits_{S} \left(y_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_py_p\right)\,\dd m}{\mathcal{R}_S}$$
-$$=\matinertie{A}{B}{C}{-D}{-E}{-F}{\mathcal{R}_S}
+\inertie{O}{S}=\matinertie{\int\limits_{S} \left(y_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + y_p^2 \right)\,\dd m}{-\int\limits_{S} \left(y_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_py_p\right)\,\dd m}{\mathcal{R}_S}=\matinertie{A}{B}{C}{-D}{-E}{-F}{\mathcal{R}_S}
 .$$
 
 On appelle moments d'inertie par rapport aux axes $\axe{O}{{x}}$, $\axe{O}{{y}}$ et $\axe{O}{{z}}$  les termes $A$, $B$ et $C$. 
@@ -148,8 +147,7 @@ $$I_{\Delta}(S)=\int\limits_{S} d_{\Delta}^2 \dd m \quad \text{où } d_{\Delta} 
 Soit $S$ un solide de centre d'inertie $G$, de masse $m$, d'inertie $\inertie{G}{S}$ et d'inertie $\inertie{O}{S}$ avec $\vect{OG}=a\vect{x}+b\vect{y}+c\vect{z}$. Les matrices $\inertie{G}{S}$ et $\inertie{O}{S}$ exprimées dans la base $\mathcal{B}=\base{x}{y}{z}$ sont liées par : 
 $$
 \matinertie{A_O}{B_O}{C_O}{-D_O}{-E_O}{-F_O}{\mathcal{B}}
-= \matinertie{A_G}{B_G}{C_G}{-D_G}{-E_G}{-F_G}{\mathcal{B}}$$
-$$
+= \matinertie{A_G}{B_G}{C_G}{-D_G}{-E_G}{-F_G}{\mathcal{B}}
 + \matinertie{m\left(b^2+c^2\right)}{m\left(a^2+c^2\right)}{m\left(a^2+b^2\right)}{-mbc}{-mac}{-mab}{\mathcal{B}}.
 $$
 
@@ -191,7 +189,6 @@ Pour passer $\inertie{A}{S}_{\mathcal{B}_1}$ de ${\mathcal{B}_1}$ et ${\mathcal{
 
 \subsection{Matrice d'inertie de solides usuels [3]}
 
-\begin{table*}[!h]
 \begin{center}
 \begin{tabular}{ccc}
 \includegraphics[width=7cm]{mat_01} & &
@@ -204,7 +201,7 @@ Pour passer $\inertie{A}{S}_{\mathcal{B}_1}$ de ${\mathcal{B}_1}$ et ${\mathcal{
 \includegraphics[width=7cm]{mat_08} \\ 
 \end{tabular}
 \end{center}
-\end{table*}
+
 
 
 
