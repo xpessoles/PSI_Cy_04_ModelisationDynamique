@@ -73,7 +73,7 @@ On rencontre principalement deux types de structures : des chaînes fermées, ou
 \textbf{Remarques :}
 \begin{itemize}
 \item Entre les pièces (ou les groupes de pièces), on matérialise les liaisons (dont vous connaissez super bien les torseurs).
-\item Entre certaines pièces (ou groupes de pièces), il peut exister des actions mécaniques extérieures qui agissent << en positif >> sur une des pièces et << en négatif >> sur l'autre. \textbf{C'est par exemple le cas des moteurs et des vérins}. Il faut bien préciser que l'action mécanique agit sur les deux pièces.
+\item Entre certaines pièces (ou groupes de pièces), il peut exister des actions mécaniques extérieures qui agissent << en positif >> sur une des pièces et << en négatif~>> sur l'autre. \textbf{C'est par exemple le cas des moteurs et des vérins}. Il faut bien préciser que l'action mécanique agit sur les deux pièces.
 \item Les actions strictement extérieures (comme la pesanteur) ne sont pas en interactions entre deux pièces.
 \end{itemize}
 
@@ -133,13 +133,96 @@ Dans les cas des véhicules, l'application du PFD permet de déterminer
 \item les conditions de basculent en ligne droite ou en virage.
 \end{itemize}
 
+\subsubsection{Véhicule qui accélère, sans glissement des roues}
 
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_10}
+\caption{Véhicule en mouvement \label{fig:fig_10}}
+\end{marginfigure}
+
+La figure \ref{fig:fig_10} permet de modéliser (partiellement) les actions mécaniques sur un véhicule en ligne droite.  En faisant les hypothèses suivantes : 
+\begin{itemize}
+\item véhicule qui accélère et roues avant motrices, 
+\item problème plan;
+\item masse des roues négligeables;
+\end{itemize}
+il en résulte que la roue arrière (dont l'inertie est nulle si la masse est négligeable) est soumise à deux glisseurs (pivot dans le plan avec le châssis et contact ponctuel avec le sol). En conséquence, il n'y a pas d'effort tangentiel dans cette liaison. 
+
+De plus en phase d'accélération et d'adhérence de la roue avant, l'effort tangentiel de la roue sur le sol est vers l'avant. 
+
+\subsubsection{Freinage, roues bloquées}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_11}
+\caption{Freinage et glissade ... \label{fig:fig_11}}
+\end{marginfigure} 
+
+On se met dans le cas d'un freinage sur toutes les roues et ces roues se bloquent. Le véhicule glisse et l'effort tangentiel s'oppose au mouvement. On est dans le cas d'un glissement, donc on est sur le cône de frottement. 
+
+La loi de mouvement peut s'obtenir en isolant tout le véhicule et en réalisant un \textbf{théorème de la résultante dynamique} suivant $\vi{0}$. Le TRD sur $\vj{0}$, le TMD (par exemple en $I$) et les lois de Coulomb permettent de supprimer les inconnues de liaison.
+
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_13}
+\caption{Dérapage \label{fig:fig_13}}
+\end{marginfigure} 
+
+\subsubsection{Dérapage en rond point}
+
+Si on dérape (figure \ref{fig:fig_13)}), c'est nécessairement suivant la direction $\vk{1}$. La loi de mouvement, ou les conditions de dérapge, peuvent s'obtenir en isolant tout le véhicule et en réalisant un \textbf{théorème de la résultante dynamique} suivant $\vi{0}$. 
+La tendance au dérapement étant vers l'extérieur du virage, les efforts tangentiels sont nécessairement orientés vers l'intérieur du virage.
+
+
+\subsubsection{Tonneau en rond point}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_12}
+\caption{Tonneau \label{fig:fig_12}}
+\end{marginfigure} 
+
+
+Si la voiture part en tonneau (figure \ref{fig:fig_12)} c'est nécessairement en pivotant autour de l'axe $\vect{IJ}$. Pour déterminer les conditions de tonneau, il faudra donc d'une part réaliser un \textbf{théorème du moment dynamique} en $I$ ou en $J$ en projection suivant la direction $\vect{IJ}$ (c'est-à-dire vecteur $\vi{1}$). 
+\textbf{On cherchera alors la condition où les efforts normaux sur les roues intérieures seront nulles.}
+
+
+
+\subsubsection{Wheeling en moto}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_15}
+\caption{Wheeling \label{fig:fig_15}}
+\end{marginfigure} 
+
+On souhaite savoir dans quelles conditions il est possible de faire un wheeling en moto, c'est à dire pour quelle accélération, la roue avant va se décoller du sol. 
+Ce mouvement correspond à une rotation de la moto autour de la roue arrière.
+
+Pour traduire ce mouvement, on isole l'ensemble de la moto et on réalise un \textbf{théorème du moment dynamique} en $J$ en on détermine \textbf{à quelle condition l'effort normal sur la roue avant est nul}.
+
+
+
+\subsubsection{Soleil en moto}
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_16}
+\caption{Soleil \label{fig:fig_16}}
+\end{marginfigure} 
+
+On souhaite savoir dans quelles conditions il est possible de décoler la roue arrière, c'est à dire pour quelle délération, la roue arrière va se décoller du sol lors d'un freinage sur la roue avant uniquement (roue avant bloquée).
+Ce mouvement correspond à une rotation de la moto autour de la roue avant.
+
+Pour traduire ce mouvement, on isole l'ensemble de la moto et on réalise un \textbf{théorème du moment dynamique} en $I$ en on détermine \textbf{à quelle condition l'effort normal sur la roue arrière est nul}.
 
 \subsection{Il y a plus qu'à ...}
 \subsubsection{Produit mixte}
-Petite remarque pour finir : le produit mixte. Lorsqu'on applique un TMS suivant une direction, le produit mixte peut être un bon outil :
+Petite remarque pour finir : le produit mixte. Lorsqu'on applique un théorème suivant une direction, le produit mixte peut être un bon outil :
 $\vectm{B}{1}{2}\cdot \vect{z} = \left( \vectm{A}{1}{2} + \vect{BA}\wedge \vectf{1}{2}\right)\cdot \vect{z}$
 $=  \vectm{A}{1}{2}\cdot \vect{z} + \left(\vect{BA}\wedge \vectf{1}{2}\right)\cdot \vect{z}$...
 et $\left(\vect{u} \wedge \vect{v}\right) \cdot \vect{z}= \left(\vect{v} \wedge \vect{z}\right) \cdot \vect{u}= \left(\vect{z} \wedge \vect{u}\right) \cdot \vect{v}$.
 
 \subsubsection{Projection de la dérivée et dérivée de la projection...}
+\marginnote{On reconnaîtra que $(uv)' = u'v + uv'$ et donc $u'v =  (uv)' -u v' $.}
+On pourra utiliser judicieusement le résultat suivant : 
+$$
+\deriv{\vect{V}(t)}{\bas{0}}\cdot \vect{u}(t) =
+\deriv{\vect{V}(t) \cdot \vect{u}(t) }{} - \vect{V}(t) \cdot \deriv{\vect{u}(t)}{\bas{0}} 
+$$
