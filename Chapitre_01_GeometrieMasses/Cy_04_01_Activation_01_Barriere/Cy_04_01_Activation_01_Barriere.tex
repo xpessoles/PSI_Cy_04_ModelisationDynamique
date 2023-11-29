@@ -50,13 +50,27 @@ Le barrage sur la Tamise permet de protéger Londres des grandes marrées évita
 \begin{corrige}
 \paragraph*{Coordonnées de $G_P$}
 
-
+On a $\vect{OG_P}= -\cos\alpha \vy{} - \dfrac{L}{2} \vz{}$.
 
 \paragraph*{Coordonnées de $G_C$}
 
+Pour des raisons de symétrie, on a $\vect{OG_C}= Y_{C} \vy{} - \dfrac{L}{2} \vz{}$.
+
+Par définition, on a alors $m_c Y_{C} = \int y_p \text{d} m$.
+
+On a, en coordonnées cylindriques, $Y_p =- R\cos\theta$, $\text{d} m = \rho L R \text{d} \theta$ avec $\theta$ variant de $-\alpha$ à $\alpha$.
+
+Par suite, $m_c Y_{C} = -\int\limits_{-\alpha}^{\alpha} R \cos \theta  \rho L R \text{d} \theta$ 
+$=-\rho R^2 L\left[\sin \theta \right]_{-\alpha}^{\alpha}$
+$=-2\rho R^2 L  \sin\alpha$. 
+
+Or, $m_c = 2R\alpha L \rho$. En conséquences, $2R\alpha L \rho Y_{C}=-2 L \rho R^2  \sin\alpha$ et 
+$ Y_{C}=- R  \dfrac{\sin\alpha}{\alpha}$. 
+%
+%
 \paragraph*{Coordonnées de $G$}
 
-
+En utilisant la définition du barycentre, on a $m \vect{OG} = m_P \vect{OG_P}+m_C \vect{OG_C}$.
 \end{corrige}
 \else
 
