@@ -1,4 +1,4 @@
-% "{'classe':('PSI'),'chapitre':'dyn_cin','type':('td'),'titre':'Stabilisateur passif d\\'image', 'source':'Mines Ponts 2018 - PSI','comp':('C1-05','C2-09'),'corrige':True}"
+% "{'classe':('PSI'),'chapitre':'dyn_cin','type':('td'),'titre':'Stabilisateur passif d\\'image', 'source':'Mines Ponts 2018 - PSI','comp':('C1-05','C2-09','DYN-04'),'corrige':True}"
 %\setchapterimage{bandeau}
 \chapter*{TD \arabic{cptTD} \\ 
 Stabilisateur passif d'image -- \ifprof Corrigé \else Sujet \fi}
@@ -9,11 +9,12 @@ Stabilisateur passif d'image -- \ifprof Corrigé \else Sujet \fi}
 \fi
 
 \setcounter{question}{0}
+\marginnote{\xpComp{DYN}{04}}
 \marginnote{Mines Ponts 2018 -- PSI.}
-\marginnote{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
+%\marginnote{
+%\UPSTIcompetence[2]{C1-05}
+%\UPSTIcompetence[2]{C2-09}
+%}
 \begin{marginfigure}[4cm]
 \centering
 \includegraphics[width=.7\linewidth]{fig_00}
@@ -258,7 +259,7 @@ On a $0,03 \degres < 0,5\degres$. Le cahier des charges est vérifié au voisina
 
 \ifcolle
 \else
-\marginnote[-4cm]{
+%\marginnote[-4cm]{
 \begin{solution}
 \begin{enumerate}
 \item $Q_1 = M_{Cp}L_{Cp}^2+M_{C}L_{C}^2 $, $Q_2(t)=\left(   L_{Cp}M_{Cp} - L_CM_C \right)g \sin \varphi$, 
@@ -268,5 +269,6 @@ $Q_3(t)= \left(M_{Cp}L_{Cp}- M_CL_C\right)  \cos\varphi$.
 \item $0,03 \degres$.
 \item .
 \end{enumerate}
-\end{solution}}
+\end{solution}
+%}
 \fi
