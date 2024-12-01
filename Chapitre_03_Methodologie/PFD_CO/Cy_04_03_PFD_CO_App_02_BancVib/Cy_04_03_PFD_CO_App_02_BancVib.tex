@@ -1,10 +1,10 @@
 % "{'classe':('PSI'),'chapitre':'dyn_pfd_co','type':('application'),'titre':'Banc d\\'essai vibrant', 'source':'Pôle Chateaubriand -- Joliot Curie','comp':('C1-05','C2-09'),'corrige':True}"
 %\setchapterimage{bandeau}
 \chapter*{Application \arabic{cptApplication} \\ 
-Chaîne ouverte -- Banc d'essai vibrant\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
+Chaîne ouverte -- Banc d'essai vibrant \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
 -- \ifprof Corrigé \else Sujet \fi}
 \addcontentsline{toc}{section}{Application \arabic{cptApplication} : 
-Chaîne ouverte -- Banc d'essai vibrant\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
+Chaîne ouverte -- Banc d'essai vibrant \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
 -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \stepcounter{cptApplication} \else
@@ -13,10 +13,12 @@ Chaîne ouverte -- Banc d'essai vibrant\ifnormal $\star$ \else \fi \ifdifficile 
 
 \setcounter{question}{0}
 \marginnote{Pôle Chateaubriand -- Joliot Curie}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
+\marginnote{\xpComp{DYN}{05}}
+%
+%\marginnote[1cm]{
+%\UPSTIcompetence[2]{C1-05}
+%\UPSTIcompetence[2]{C2-09}
+%}
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_00}
 \end{marginfigure}

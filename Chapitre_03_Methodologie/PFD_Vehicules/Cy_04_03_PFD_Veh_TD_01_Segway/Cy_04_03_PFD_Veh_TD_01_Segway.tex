@@ -13,10 +13,11 @@ Dynamique du véhicule -- Segway de première génération\ifnormal $\star$ \els
 
 \setcounter{question}{0}
 \marginnote{Frédéric SOLLNER -- Lycée Mermoz -- Montpellier.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
+\marginnote{\xpComp{DYN}{05}}
+%\marginnote[1cm]{
+%\UPSTIcompetence[2]{C1-05}
+%\UPSTIcompetence[2]{C2-09}
+%}
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_01}
 \end{marginfigure}
@@ -77,10 +78,9 @@ On donne ci-dessous un extrait du cahier des charges.
 
 %\begin{obj} ~\\
 \begin{center}
-\begin{tabular}{|p{.7\linewidth}|p{.2\linewidth}|}
+\begin{tabular}{p{.7\linewidth}p{.2\linewidth}}
 \hline 
-Exigence & Niveau \\
-\hline
+\textbf{Exigence} & \textbf{Niveau} \\\hline 
 id=<<1.1>> Glissement du véhicule pour une vitesse de $\SI{20}{km.h^{-1}}$ dans un virage de rayon de courbure \SI{10}{m} 
 & Interdit \\
 \hline
@@ -187,9 +187,9 @@ On donne ci-dessous un extrait du cahier des charges.
 
 %\begin{obj} ~\\
 \begin{center}
-\begin{tabular}{|p{.7\linewidth}|p{.2\linewidth}|}
+\begin{tabular}{p{.7\linewidth}p{.2\linewidth}}
 \hline 
-Exigence & Niveau \\
+\textbf{Exigence} & \textbf{Niveau}\\
 \hline
 id=<<1.2>> Renversement du véhicule pour une vitesse de \SI{20}{km.h^{-1}} dans un virage de rayon de courbure \SI{10}{m}.
 & Interdit \\
@@ -308,7 +308,7 @@ CDCF Validé.
 \else
 \footnotesize
 \marginnote{
-\begin{solution}[-5cm]
+\begin{solution}
 \begin{enumerate}
 \item $\vect{V\left(G_E /\rep{0}\right)}=-R_C\dot{\theta}\vect{x_1}$ et $V_L=R_C\dot{\theta}$.
 \item $\vect{\Gamma \left(G_E /\rep{0}\right)}=-R_C\dot{\theta}^2\vect{y_1}$.
