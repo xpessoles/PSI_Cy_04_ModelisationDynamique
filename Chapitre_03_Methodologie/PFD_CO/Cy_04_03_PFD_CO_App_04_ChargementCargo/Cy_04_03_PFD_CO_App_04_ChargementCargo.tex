@@ -1,10 +1,10 @@
 % "{'classe':('PSI'),'chapitre':'dyn_pfd_co','type':('application'),'titre':'Chargement et déchargement des cargos porte-conteneurs', 'source':'Centrale Supélec PSI 2013','comp':('C1-05','C2-09'),'corrige':True}"
 %\setchapterimage{bandeau}
 \chapter*{Application \arabic{cptApplication} \\ 
-Chargement et déchargement des cargos porte-conteneurs  \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
+Chargement et déchargement des cargos porte-conteneurs   $\star\star$
 -- \ifprof Corrigé \else Sujet \fi}
 \addcontentsline{toc}{section}{Application \arabic{cptApplication} : 
-Chargement et déchargement des cargos porte-conteneurs  \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
+Chargement et déchargement des cargos porte-conteneurs   $\star\star$ 
 -- \ifprof Corrigé \else Sujet \fi}
 
 \iflivret \stepcounter{cptApplication} \else
@@ -128,6 +128,10 @@ On a donc, $\torseurdyn{3}{0}=\torseurl{M_3\left(\ddot{y}_{ch}(t) \vect{y_0}+\el
 \else
 \fi
 
+
+
+
+
 \question{En précisant l’isolement et le bilan des actions mécaniques extérieures, déterminer l’équation différentielle
 de résultante reliant les paramètres $\theta(t)$, $\beta(t)$%$\beta(t)$
  et $y_{ch}(t)$, sans inconnue de liaison et sans l'action du moteur.}
@@ -184,23 +188,25 @@ $F = \vectrd{1+2+3}{0}\cdot \vect{y_0}= \underbrace{\vectrd{1}{0} \cdot  \vect{y
 reliant les paramètres $\theta(t)$, $\beta(t)$  et $y_{ch}(t)$ et sans inconnue de liaison. La méthode sera clairement séparée des calculs.}
 \ifprof
 \begin{corrige}
-Le TRD appliqué à 3 en projection suivant $\vect{z_2}$ se traduit par : 
-
-$F-M_3 g \vect{z_0}\cdot \vect{z_2} = 
-\left( M_3\left(\ddot{y}_{ch}(t) \vect{y_0}+\ell_2\ddot{\theta} \vect{y_2}+h_3\left(\ddot{\theta}+\ddot{\beta}\right) \vect{y_3}
-+   
-\ell_2\dot{\theta}^2 \vect{z_2}  +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\vect{z_3}\right)\right) \cdot \vect{z_2}$
-
-$\Leftrightarrow F-M_3 g \cos \theta  = 
- M_3\left(- \ddot{y}_{ch}(t) \sin \theta +h_3\left(\ddot{\theta}+\ddot{\beta}\right) \sin\beta
-+   
-\ell_2\dot{\theta}^2   +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\cos \beta \right) $.
+%Le TRD appliqué à 3 en projection suivant $\vect{z_2}$ se traduit par : 
+%
+%$F-M_3 g \vect{z_0}\cdot \vect{z_2} = 
+%\left( M_3\left(\ddot{y}_{ch}(t) \vect{y_0}+\ell_2\ddot{\theta} \vect{y_2}+h_3\left(\ddot{\theta}+\ddot{\beta}\right) \vect{y_3}
+%+   
+%\ell_2\dot{\theta}^2 \vect{z_2}  +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\vect{z_3}\right)\right) \cdot \vect{z_2}$
+%
+%$\Leftrightarrow F-M_3 g \cos \theta  = 
+% M_3\left(- \ddot{y}_{ch}(t) \sin \theta +h_3\left(\ddot{\theta}+\ddot{\beta}\right) \sin\beta
+%+   
+%\ell_2\dot{\theta}^2   +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\cos \beta \right) $.
 
 
 
 Le TMD appliqué à 3 au point $F$ en projection suivant $\vect{x_0}$ se traduit par : 
 
 $\vect{FG_3}\wedge \left(-M_3g \vect{z_0} \right) \cdot \vect{x_0} =\left(\vectmd{G_3}{3}{0}+\vect{FG_3}\wedge \vectrd{3}{0}\right)\cdot \vect{x_0}$
+
+**** Il faut calculer $\vect{FG_3}\wedge \vectrd{3}{0}$ *****
 
 $\Leftrightarrow -h_3 \vect{z_3} \wedge \left(-M_3g \vect{z_0} \right) \cdot \vect{x_0} =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$
 
@@ -235,9 +241,9 @@ En considérant que $\dot{\theta}$ et $\dot{\beta}$ sont petits, on a :
 $F-M_3 g  = 
  M_3\left(- \ddot{y}_{ch}(t) \theta +h_3\left(\ddot{\theta}+\ddot{\beta}\right) \beta
  \right) $.
- \item On a : $ M_3gh_3 \sin\left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$ En linéarisant, on obtient  $M_3gh_3 \left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$.
+% \item On a : $ M_3gh_3 \sin\left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$ En linéarisant, on obtient  $M_3gh_3 \left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$.
+%\item $ - M_3gh_3 \sin\left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$.
  \end{itemize}
-
 \end{corrige}
 \else
 \fi
@@ -281,13 +287,34 @@ L'amplitude des oscillations de $\beta$ est 10 fois inférieure aux oscillations
 \begin{itemize}
 \item $ - g \theta  = \ddot{y}_{ch}(t) +\ell_2\ddot{\theta} +h_3\ddot{\theta} $;
 \item  $F-M_3 g  = - M_3 \ddot{y}_{ch}(t) \theta  $;
- \item  $M_3gh_3 \theta =A_3 \ddot{\theta} $.
- \end{itemize}
- 
+\item  $M_3gh_3 \theta =A_3 \ddot{\theta} $.
+\end{itemize}
+
 \end{corrige}
 \else
 \fi
 
+\ifprof
+\else
+\ifcolle
+\else
+\begin{solution}
+\begin{enumerate}
+\item $m=3$.
+\item $\vectv{G_3}{3}{0}=   
+\dot{y}_{ch}(t) \vect{y_0}+\ell_2\dot{\theta} \vect{y_2}+h_3\left(\dot{\theta}+\dot{\beta}\right) \vect{y_3}$, 
+$\torseurdyn{3}{0}=\torseurl{M_3\left(\ddot{y}_{ch}(t) \vect{y_0}+\ell_2\ddot{\theta} \vect{y_2}+h_3\left(\ddot{\theta}+\ddot{\beta}\right) \vect{y_3}
++   
+\ell_2\dot{\theta}^2 \vect{z_2}  +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\vect{z_3}\right)}{A_3 \left(\ddot{\theta}+\ddot{\beta} \right)\vect{x_0}}{G_3}$.
+\item $ -M_3 g \sin \theta  = 
+ M_3\left(\ddot{y}_{ch}(t) \cos \theta +\ell_2\ddot{\theta} +h_3\left(\ddot{\theta}+\ddot{\beta}\right)\cos \beta 
+-h_3\left(\dot{\theta}+\dot{\beta}\right)^2\sin\beta \right)$
+\item $- M_3gh_3 \sin\left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$
+\item 
+\end{enumerate}
+\end{solution}
+\fi
+\fi
 
 
 %\begin{itemize}
