@@ -1,0 +1,247 @@
+% "{'classe':('PSI'),'chapitre':'dyn_cin','type':('application'),'titre':'Stabilistaeur gyroscopique de bateau', 'source':'ERM','comp':('DYN-04'),'corrige':False}"
+%\setchapterimage{bandeau}
+\chapter*{Application \arabic{cptApplication} \\ 
+Gyrostabilisateur de bateau -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{Application \arabic{cptApplication} : Gyrostabilisateur de bateau -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptApplication} \else
+\ifprof  \stepcounter{cptApplication} \else \fi
+\fi
+
+\setcounter{question}{0}
+\marginnote{\xpComp{DYN}{04}}
+%\begin{marginfigure}[4cm]
+%\includegraphics[width=\linewidth]{fig_00}
+%\end{marginfigure}
+
+\subsection*{Présentation du système}
+\begin{marginfigure}%[!h]
+\includegraphics[width=\linewidth]{fig_02}
+\caption{\label{cy_04_02_App_06_fig_01} Maquette du gyrostabilisateur de bateau}
+\end{marginfigure}
+
+Le système étudié est un dispositif de stabilisation gyroscopique pour bateaux permettant de réduire (voire de neutraliser) le mouvement de roulis. Par rapport au repère $\rep{0} = \repere{O}{x_0}{y_0}{z_0}$ lié à la Terre 0 (galiléen) (fig. \ref{cy_04_02_App_06_fig_01}) un bateau, sur la mer, est soumis à 6 degrés de liberté. 
+
+Le stabilisateur est constitué essentiellement de cinq sous-ensembles  principaux (cinématiquement équivalents) actionnés par deux vérins électriques. Le vérin V1 assure le déplacement du s-e Surcharge 4 et le vérin V2 celui de l’orientation du s-e Cadre 2. 
+
+
+ \begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_03}
+\caption{\label{cy_04_02_App_06_fig_01} Eclaté de la maqute du gyrostabilisateur de bateau}
+\end{marginfigure}
+
+\marginnote{Le systèmes étudié est composé : 
+\begin{itemize}
+\item du repère $\rep{0},\repere{O}{x_0}{y_0}{z_0}$ lié à la Terre 0 (galiléen) ;
+\item du repère $\rep{1},\repere{O}{x_1}{y_1}{z_1}$ lié au bateau 1 ;
+\item du repère $\rep{2},\repere{O}{x_2}{y_2}{z_2}$ lié au cadre 2 ;
+\item du repère $\rep{3},\repere{O}{x_3}{y_3}{z_3}$ lié au volant 3. 
+\end{itemize}}
+
+\marginnote{Les rotations des solides sont paramétrées par les coordonnées articulaires :
+\begin{itemize}
+\item $\gamma_1 =\angl{y_0}{y_1}=\angl{z_0}{z_1}$ -- mouvement de roulis du bateau par rapport au repère galiléen ;
+\item $\gamma_2=\angl{z_1}{z_2}=\angl{x_1}{x_2}$ -- rotation du cadre 2 par rapport au bateau 1 ;
+\item $\gamma_3 =\angl{x_2}{x_3}=\angl{y_2}{y_3}$ -- rotation du volant d’inertie 3 par rapport au cadre 2. 
+\end{itemize}
+}
+ 
+
+
+
+\subsection*{Paramétrage}
+
+De manière simplifiée, les quatre solides principaux assemblés par trois liaisons pivot en série (voir figure \ref{cy_04_02_App_06_fig_01}).
+En outre un solide 4 considéré comme une m	asse ponctuelle en G4 se déplace dans le bateau grâce au vérin électrique V1. Un deuxième vérin électrique V2 assure l’orientation du solide 2 par rapport au solide 1.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.9\linewidth]{fig_05}
+\caption{\label{cy_04_02_App_06_fig_01} Schéma cinématique partiel du stabilisateur}
+\end{figure} 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.7\linewidth]{fig_06_01}
+\caption{\label{cy_04_02_App_06_fig_06} Figures de changement de base}
+\end{figure}
+
+
+
+
+
+\textbf{Bateau 1 :} centre de masse $G_1$, $\vect{OG_1}=a_1\vx{1}+c_1\vz{1}$, masse $m_1$, on note $\inertie{O}{1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\bas{1}}$. Le plan $\left(O,\vx{1},\vz{1}\right)$ est le plan de symétrie longitudinal du bateau.
+
+\textbf{Cadre 2 :} centre de masse $G_2$, $\vect{SG_2}=c_2\vz{2}$, masse $m_2$, $\inertie{G_2}{2}=\matinertie{A_2}{B_2}{C_2}{-D_2}{-E_2}{-F_2}{\bas{2}}$. Les plans $\left(S,\vx{2},\vz{2}\right)$ et $\left(S,\vy{2},\vz{2}\right)$ sont deux plans de symétrie du cadre 2.
+
+\textbf{Volant 3 :} centre de masse $G_3$, $\vect{SG_3} = \ell_3\vect{z_2}$ et $\vect{OS}=\lambda_1\vz{1}$, masse $m_3$, solide de révolution d'axe $\axe{S}{z_3}$ $\inertie{G_3}{3}=\matinertie{A_3}{A_3}{C_3}{0}{0}{0}{\bas{2}}$.
+
+
+
+
+
+
+
+Les liaisons sont supposées géométriquement et énergétiquement parfaites.
+
+Le volant 3 est actionné par un moteur :
+$\torseurstat{T}{2_m}{3} = \torseurl{\vectf{2_m}{3}=\vect{0}}{\vectm{P}{2_m}{3}=M_m(t)\vz{3}}{\forall P}.$
+
+L'action du vérin entre 1 et 2 est modélisée par un moteur :
+
+$\torseurstat{T}{1_m}{2} = \torseurl{\vectf{1_m}{2}=\vect{0}}{\vectm{O}{1_m}{2}=M(t)\vy{1}}{\forall P}.$
+
+\question{Tracer le graphe de liaisons. Faire apparaître l'ensemble des actions mécaniques.}
+
+
+\question{Proposer une stratégie permettant d'obtenir les lois de mouvements.}
+
+%
+\question{Mettre en \oe{}uvre cette stratégie.}
+
+%
+%On note $O$ le milieu de $\left[ A_0 B_0\right]$ et $M$ le milieu de $\left[ A B\right]$. Bien qu'un soin très
+%important soit apporté à la fabrication du rotor, il est impossible d'annuler totalement
+%les défauts d'équilibrage. Le centre de gravité n'est donc pas exactement
+%situé sur l'axe $(AB)$, mais à une distance de celui-ci telle que $\vect{MG}=r_0\vect{y_3}$.
+%
+%De même, la matrice d'inertie $I_{G,3}$ n'est pas parfaitement diagonale et présente
+%un produit d'inertie $D$ non nul. On admet toutefois que $r<<L$ et $D<<(A,B,C)$,
+%où $A$, $B$, $C$sont les moments d’inertie. Le mouvement du rotor, auquel on associe
+%le repère 3, par rapport au bâti est paramétré par les trois déplacements $(x,y,z)$
+%du point $M$ dans le repère $\rep{0}\repere{0}{x_0}{y_0}{z_0}$ :  $\vect{OM}=x\vect{x_0}+y\vect{y_0}+z\vect{z_0}$ ainsi que par trois rotations $\left(\alpha,\beta,\gamma\right)$ telles que :
+%
+%\begin{itemize}
+%\item $\alpha$ paramètre la rotation d'une base $\mathcal{B}_1\base{x_0}{y_1}{z_1}$ par rapport à $\mathcal{B}_0$ autour de l'axe $\vect{x_0}$;
+%\item $\beta$ paramètre la rotation d'une base $\mathcal{B}_2\base{x_2}{y_1}{z_2}$ par rapport à $\mathcal{B}_1$ autour de l'axe $\vect{y_1}$;
+%\item $\theta$ paramètre la rotation d'une base $\mathcal{B}_3\base{x_3}{y_3}{z_2}$ par rapport à $\mathcal{B}_2$ autour de l'axe $\vect{z_2}$.
+%\end{itemize}
+%
+%Si le rotor présente 6 degrés de liberté, il est bien évident qu'excepté la rotation
+%propre principale $\theta$, ces mouvements sont très petits.
+%
+%En notant $\varepsilon(x)$ une fonction telle que $|\varepsilon(x)|<<|x|$, on peut écrire :
+%$\left\{
+%\begin{array}{l}
+%x,y,z \simeq \varepsilon(L) \\
+%\alpha, \beta \simeq \varepsilon(1)
+%\end{array}
+%\right.
+%$.
+%
+%On suppose que la vitesse de rotation du rotor est constante : $\dot{\theta}=\omega$ et $\ddot{\theta}=0$.
+%
+%\subsubsection*{Efforts des paliers et du moteur sur le rotor}
+%
+%Pour le dimensionnement dynamique, on modélise les actions des trois paliers
+%magnétiques et l'action du moteur électrique sous la forme :
+%
+%$\torseurstat{T}{0}{3A} = \torseurl{X_A\vect{x_0}+Y_A\vect{y_0}}{\vect{0}}{A}$, 
+%$\torseurstat{T}{0}{3B} = \torseurl{X_B\vect{x_0}+Y_B\vect{y_0}}{\vect{0}}{B}$,
+%$\torseurstat{T}{0}{3C} = \torseurl{Z_C\vect{z_0}}{\vect{0}}{C}$,
+%$\torseurstat{T}{\text{moteur}}{3} = \torseurl{\vect{0}}{C_m\vect{z_0}}{G}$.
+%
+%Avec 
+%$\left\{
+%\begin{array}{l}
+%X_A\vect{x_0}+Y_A\vect{y_0} = -k\left[\vect{A_0 A}\right]_{\left(\vect{x_0},\vect{y_0} \right)} -c\left[ \vectv{A}{3}{0}\right]_{\left(\vect{x_0},\vect{y_0} \right)} \\
+%X_B\vect{x_0}+Y_B\vect{y_0} = -k\left[\vect{B_0 B}\right]_{\left(\vect{x_0},\vect{y_0} \right)} -c\left[ \vectv{B}{3}{0}\right]_{\left(\vect{x_0},\vect{y_0} \right)} \\
+%Z_C = -k \vect{C_0 C}\vect{z_0}-c\vectv{C}{3}{0}\cdot \vect{z_0}
+%\end{array}
+%\right.$
+%et $k=\SI{50e4}{Nm^{-1}}$ et $c=\SI{970}{Nm^{-1}s}$. La notation $\left[\vect{V}\right]_{\left(\vect{x_0},\vect{y_0} \right)}$  désigne la projection dans le plan $\left(\vect{x_0},\vect{y_0} \right)$ du vecteur $\vect{V}$.
+%Les actions de la pesanteur sont négligées. Le bâti est supposé être un référentiel
+%galiléen.
+%
+%
+%Le rotor, tel que $L=\SI{50}{mm}$, a pour masse $m=\SI{10}{kg}$, pour centre de gravité $G$
+%tel que $\vect{MG}=r_0\vect{y_3}$ où $r_0=\SI{0,05}{mm}$, et pour matrice d'inertie en $G$:
+%$\inertie{G}{3}=\matinertie{A}{A}{C}{-D}{0}{0}{B_3}$ où $A=\SI{0,08}{kg.m^2}$, $C=\SI{0,04}{kg.m^2}$ et $D=\SI{e-4}{kg.m^2}$.
+%
+%On admet que $r_0\simeq \varepsilon(L)$ et $D\simeq \varepsilon(A)\simeq \varepsilon(C)$.
+%
+%\begin{obj}
+%Proposer un modèle de comportement dynamique du rotor en phase de rotation.
+%\end{obj}
+%
+%\question{Appliquer le Principe Fondamental de la Dynamique au rotor et l'exprimer
+%sous forme torsorielle.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%
+%
+%Les questions suivantes visent à déterminer le système d'équations issu de cette
+%équation torsorielle.
+%
+%\question{Montrer que%, dans le cadre des hypothèses formulées, 
+%l'expression au premier ordre de la vitesse du centre de gravité $G$ du rotor par rapport au bâti
+%s'écrit : $\vectv{G}{3}{0}=\dot{x}\vect{x_0}+\dot{y}\vect{y_0}+\dot{z}\vect{z_0}-r_0\omega \vect{x_3}$.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%
+%\question{Déterminer %, dans le cadre des hypothèses formulées, 
+%l'expression au premier
+%ordre de l'accélération du centre de gravité $G$ du rotor par rapport au
+%bâti 0 : $\vectg{G}{3}{0}$.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%On admet que par changement de base, la matrice $I_{G,3}$ s'écrit dans la base $B_2$ :
+%$\inertie{G}{3}=\matinertie{A}{A}{C}{-D\cos\theta}{D\sin\theta}{0}{B_2}$.
+%
+%
+%
+%\question{Montrer que %, dans le cadre des hypothèses formulées, 
+%l'expression au premier ordre du moment cinétique en $G$ du rotor par rapport au bâti s'écrit :
+%$\vectmc{G}{3}{0}=\begin{pmatrix} A\dot{\alpha}+D\omega\sin\theta  \\ A\dot{ \beta }-D\omega\cos\theta \\ C\omega \end{pmatrix}_{B_2}$.
+%}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%
+%\ifprof
+%\else
+%\begin{marginfigure}
+%\centering
+%\includegraphics[width=3cm]{Cy_04_02_Application_05_PompeTurbomoleculaire_qr}
+%\end{marginfigure}
+%\fi
+%
+%\question{Déterminer %, dans le cadre des hypothèses formulées, 
+%l'expression au premier ordre du moment dynamique en $G$ du rotor par rapport au bâti 0 : $\vectmd{G}{3}{0}$, dans la base $B_2$.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%
+%Le Principe Fondamental de la Dynamique appliqué au rotor 3, réduit en $G$,
+%conduit alors à :
+%$$
+%\left[
+%\begin{array}{l}
+%m\ddot{x}+2c\dot{x}+2kx =-mr_0\omega^2 \sin \theta \\
+%m\ddot{y}+2c\dot{y}+2ky = mr_0\omega^2 \cos \theta \\
+%A\ddot{\alpha}+C\omega \dot{\beta }+2cL\dot{\alpha}+2kL\alpha =-D\omega^2 \cos \theta \\
+%A\ddot{\beta} - C\omega \dot{\alpha}+2cL\dot{\beta}+2kL\beta =-D\omega^2 \sin \theta \\
+%C_m=0 \\
+%\end{array}
+%\right.
+%$$
+
