@@ -1,4 +1,4 @@
-% "{'classe':('PSI'),'chapitre':'dyn_cin','type':('application'),'titre':'Pendule', 'source':'','comp':('C1-05','C2-09'),'corrige':False}"
+% "{'classe':('PSI'),'chapitre':'dyn_cin','type':('application'),'titre':'Pendule', 'source':'','comp':('DYN-04','C1-05','C2-09'),'corrige':False}"
 %\setchapterimage{bandeau}
 \chapter*{Application \arabic{cptApplication} \\ 
 Pendule -- \ifprof Corrigé \else Sujet \fi}
@@ -9,11 +9,11 @@ Pendule -- \ifprof Corrigé \else Sujet \fi}
 \fi
 
 \setcounter{question}{0}
-\marginnote{}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
+\marginnote{\xpComp{DYN}{04}}
+%\marginnote[1cm]{
+%\UPSTIcompetence[2]{C1-05}
+%\UPSTIcompetence[2]{C2-09}
+%}
 %\begin{marginfigure}[4cm]
 %\includegraphics[width=\linewidth]{fig_00}
 %\end{marginfigure}
@@ -29,7 +29,7 @@ On s'intéresse à un pendule guidé par une glissière. On fait l'hypothèse qu
 
 \begin{itemize}
 \item On note 1 la pièce de masse $M_1$ et de centre de gravité $G_1$. $\vect{OA}=\lambda(t)\vect{x_0}-h\vect{y_0}$.
-\item On note 2 la pièce de masse $M_2$ et de centre de gravité $G$ et de matrice d'inertie $\inertie{1}{G}= \matinertie{A}{B}{C}{-D}{-E}{-F}{\bas{2}}$. On a $\vect{AG}=L\vect{x_2}$
+\item On note 2 la pièce de masse $M_2$ et de centre de gravité $G$ et de matrice d'inertie $\inertie{2}{G}= \matinertie{A}{B}{C}{0}{0}{0}{\bas{2}}$. On a $\vect{AG}=L\vect{x_2}$
 \end{itemize}
 
 \subsection*{Travail à réaliser}
@@ -37,23 +37,49 @@ On s'intéresse à un pendule guidé par une glissière. On fait l'hypothèse qu
 \question{Déterminer $\vectmd{A}{2}{0}$ en utilisant deux méthodes différentes. }
 \ifprof
 \begin{corrige}
-~\\
+
 
 \textbf{Cinématique}
 
-On a $\vectv{G}{2}{0}=\deriv{\vect{OG}}{\rep{0}} $ 
+\begin{itemize}
+\item $\vectv{A}{2}{0}=\lambdap\vx{0}$
+
+\item $\vectv{G}{2}{0}=\deriv{\vect{OG}}{\rep{0}} $ 
 $=\deriv{\lambda\vect{x_0}-h\vect{y_0}+L\vect{x_2}}{\rep{0}}$ 
 $=\dot{\lambda}(t)\vect{x_0}+L\dot{\theta}\vect{y_2}$.
 
-
-
-On a $\vectg{G}{2}{0}=\deriv{\vectv{G}{2}{0}}{\rep{0}} $ 
+\item $\vectg{G}{2}{0}=\deriv{\vectv{G}{2}{0}}{\rep{0}} $ 
 $=\ddot{\lambda}(t)\vect{x_0}+L\ddot{\theta}\vect{y_2}-L\dot{\theta}^2\vect{x_2}$.
 
-\textbf{Cinétique \& dynamique}
+\end{itemize}
+\textbf{Cinétique}
 
+\begin{itemize}
+\item $\inertie{2}{A} = \matinertie{A}{B}{C}{0}{0}{0}{\bas{2}} + m_2 \matinertie{0}{L^2}{L^2}{0}{0}{0}{\bas{2}}$
+\item En $G$ : $\vectmc{G}{2}{0} = \inertie{2}{G} \vecto{2}{0} 
+= \matinertie{A}{B}{C}{0}{0}{0}{\bas{2}} \begin{pmatrix} 0 \\ 0  \\ \thetap \end{pmatrix}_{\mathcal{B}_2}$ $=C\thetap \vz{2}$.
+\item En $A$ : $\vectmc{A}{2}{0} = \inertie{2}{A} \vecto{2}{0} + m_2\vect{AG}\wedge \vectv{A}{2}{0}$ 
+$= \left(C+m_2 L^2 \right)\thetap \vz{2} + m_2\vect{AG}\wedge \vectv{A}{2}{0}$
+$= \left(C+m_2 L^2 \right)\thetap \vz{2} + m_2 L \vx{2} \wedge \lambdap\vx{0}$
+$= \left(C+m_2 L^2 \right)\thetap \vz{2} - m_2 L  \lambdap \sin \theta \vz{0}$
+\end{itemize}
 
-On a $\vectmd{G}{2}{0} = \deriv{\vectmc{G}{2}{0}}{\rep{0}} $
+\textbf{Dynamique}
+
+\begin{itemize}
+\item \textbf{Méthode 1 :} 
+$\vectmd{A}{2}{0} = \vectmd{G}{2}{0} + \vect{AG}\wedge \vectrd{2}{0}$
+$=C\thetapp \vz{2}+ L\vx{2}\wedge \left(\ddot{\lambda}(t)\vect{x_0}+Lm_2\ddot{\theta}\vect{y_2}-L\dot{\theta}^2\vect{x_2} \right)$
+$=C\thetapp \vz{2}+ Lm_2 \left(-\ddot{\lambda}(t)\sin\theta+L\ddot{\theta}\vect{z_2}\right)$
+\item \textbf{Méthode 2 :}
+$\vectmd{A}{2}{0} = \deriv{\vectmc{A}{2}{0}}{\rep{0}} + m_2\vectv{A}{2}{0}\wedge \vectv{G}{2}{0}$
+$=    \left(C+m_2 L^2 \right)\thetapp \vz{2} - m_2 L  \lambdapp \sin \theta \vz{0}- m_2 L  \lambdap \thetap \cos \theta \vz{0}
++ m_2\lambdap\vx{0}\wedge \left( \dot{\lambda}(t)\vect{x_0}+L\dot{\theta}\vect{y_2}\right)$
+$=    \left(C+m_2 L^2 \right)\thetapp \vz{2} - m_2 L  \lambdapp \sin \theta \vz{0}- m_2 L  \lambdap \thetap \cos \theta \vz{0}
++ m_2\lambdap L\dot{\theta}\cos\theta\vect{z_2}$
+$=    \left(C+m_2 L^2 \right)\thetapp \vz{2} - m_2 L  \lambdapp \sin \theta \vz{0}$
+\end{itemize}
+
 \end{corrige}
 \else
 \fi
@@ -63,6 +89,7 @@ On a $\vectmd{G}{2}{0} = \deriv{\vectmc{G}{2}{0}}{\rep{0}} $
 \question{En déduire le torseur dynamique $\torseurdyn{2}{0}$. }
 \ifprof
 \begin{corrige}
+$\torseurdyn{2}{0} = \torseurl{m_2 \ddot{\lambda}(t)\vect{x_0}+L\ddot{\theta}\vect{y_2}-L\dot{\theta}^2\vect{x_2} }{\left(C+m_2 L^2 \right)\thetapp \vz{2} - m_2 L  \lambdapp \sin \theta \vz{0}}{A}$
 \end{corrige}
 \else
 \fi
