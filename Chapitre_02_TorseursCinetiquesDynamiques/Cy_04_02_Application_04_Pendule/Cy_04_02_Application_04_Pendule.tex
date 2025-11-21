@@ -98,6 +98,24 @@ $\torseurdyn{2}{0} = \torseurl{m_2 \ddot{\lambda}(t)\vect{x_0}+L\ddot{\theta}\ve
 \question{Isoler 2 et écrire le théorème du moment dynamique en $A$ en projection sur $\vz{0}$. }
 \ifprof
 \begin{corrige}
+\begin{itemize}
+\item On isole le solide 2.
+\item BAME : 
+\begin{itemize}
+\item Action de la pivot en $A$.
+\item Pesanteur en $G$. 
+\end{itemize}
+\item On applique le TMD en $A$ en projection sur $\vz{0}$ : 
+$\vectmd{A}{2}{0} \cdot \vz{0} = \vectm{A}{\text{pes}}{2} \cdot \vz{0} + \underbrace{\vectm{A}{1}{2} \cdot \vz{0}}_{0}$
+$= \vect{AG} \wedge \vectf{\text{pes}}{2} \cdot \vz{0} $
+$= L\vx{2} \wedge \left(-M_2 g \vy{0}\right) \cdot \vz{0} $.
+$= -M_2 g L\cos\theta $.
+\end{itemize}
+
+
+Au final, 
+$$\left(C+m_2 L^2 \right)\thetapp  - m_2 L  \lambdapp \sin \theta = -M_2 g L\cos\theta$$
+
 \end{corrige}
 \else
 \fi
@@ -114,6 +132,23 @@ $\torseurdyn{2}{0} = \torseurl{m_2 \ddot{\lambda}(t)\vect{x_0}+L\ddot{\theta}\ve
 \question{Isoler \{1+2\} et écrire le théorème de la résultante dynamique en  projection sur $\vx{0}$. }
 \ifprof
 \begin{corrige}
+\begin{itemize}
+\item On isole le solide 1+2.
+\item BAME : 
+\begin{itemize}
+\item Action de glissière 0 sur 1.
+\item Pesanteur sur 1. 
+\item Pesanteur sur 2 en $G$. 
+\end{itemize}
+\item On applique le TRD en projection sur $\vx{0}$ : 
+$\vectrd{1+2}{0} \cdot \vx{0} = \underbrace{\vectf{\text{pes}}{1} \cdot \vx{0}+\vectf{\text{pes}}{2} \cdot \vx{0}}_{0} $
+$\Leftrightarrow m_2\left(\ddot{\lambda}(t)\vect{x_0}+L\ddot{\theta}\vect{y_2}-L\dot{\theta}^2\vect{x_2}\right)\cdot \vx{0} +m_1 \lambdapp(t) = 0$
+$\Leftrightarrow m_2\left(\ddot{\lambda}(t)- L\ddot{\theta}\sin \theta-L\dot{\theta}^2\cos \theta \right)+ m_1 \lambdapp(t) = 0$
+
+
+
+\end{itemize}
+
 \end{corrige}
 \else
 \fi
