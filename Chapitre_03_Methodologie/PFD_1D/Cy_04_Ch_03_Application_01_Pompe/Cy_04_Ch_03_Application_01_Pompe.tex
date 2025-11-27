@@ -134,8 +134,12 @@ $$
 =\torseurl{Y_{02}\vect{y_0}}{L_{02}\vect{x_0}}{O}$.
 \item Liaison ponctuelle : $\torseurstat{T}{1}{2}=-\torseurstat{T}{2}{1}
 =\torseurl{-Y_{21}\vect{y_0}-Z_{21}\vect{z_0}}{\vect{0}}{I}$. 
+%\item Ressort: $\torseurstat{T}{\text{Ressort}}{2}
+%=\torseurl{-F_0-kz\vect{z_0}}{\vect{0}}{A}$.
+%\large{\textbf{TODO  : remplacer l'expression de $\vect{F_r}$ par  $\vect{F_r} = -F_r \vect{z} = -\left(F_0+k\left(z+e-R\right) \right)\vz{0}$}}
 \item Ressort: $\torseurstat{T}{\text{Ressort}}{2}
-=\torseurl{-F_0-kz\vect{z_0}}{\vect{0}}{A}$.
+=\torseurl{-\left(F_0+k\left(z+e-R\right) \right)\vz{0}}{\vect{0}}{A}$.
+
 \item Pesanteur: $\torseurstat{T}{\text{Pesanteur}}{2}
 =\torseurl{-m_2g\vect{z_0}}{\vect{0}}{A}$.
 \item Fluide: $\torseurstat{T}{\text{Fluide}}{2}
@@ -154,15 +158,15 @@ $$
 
 
 \textbf{Bilan :}
-$$C_m-\left(\left(e\cos\theta+R\right)Y_{21} +e \left( -F_h-F_0-kz-m_2g-m_2\ddot{z}\right)\sin\theta\right) =I_1\ddot{\theta}.$$
+$$C_m-\left(\left(e\cos\theta+R\right)Y_{21} +e \left( -F_h-\left(F_0+k\left(z+e-R\right) \right)-m_2g-m_2\ddot{z}\right)\sin\theta\right) =I_1\ddot{\theta}.$$
 
 On a alors :
-$$C_m-\left(\left(e\cos\theta+R\right)Y_{21} -e \left( F_h+F_0+k\left( e\cos\theta+R \right)+m_2g-em_2\left( \ddot{\theta}\sin\theta+\dot{\theta}^2\cos\theta\right)\right)\sin\theta\right) =I_1\ddot{\theta}.$$
+$$C_m-\left(\left(e\cos\theta+R\right)Y_{21} -e \left( F_h+\left(F_0+k\left(z+e-R\right) \right)+m_2g-em_2\left( \ddot{\theta}\sin\theta+\dot{\theta}^2\cos\theta\right)\right)\sin\theta\right) =I_1\ddot{\theta}.$$
 
 
 \textbf{Bilan sans frottement :}
 $$C_m+e\left(
-F_h+F_0+k\left( e\cos\theta+R \right)+m_2g
+F_h+\left(F_0+k\left(z+e-R\right) \right)+m_2g
 -em_2\sin\theta\left( \ddot{\theta}\sin\theta+\dot{\theta}^2\cos\theta\right)
 \right) =I_1\ddot{\theta}.$$
 \end{corrige}
