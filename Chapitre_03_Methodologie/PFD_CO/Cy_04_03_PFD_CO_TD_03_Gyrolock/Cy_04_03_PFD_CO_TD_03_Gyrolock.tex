@@ -1,4 +1,4 @@
-% "{'classe':('PSI'),'chapitre':'dyn_pfd_co','type':('td'),'titre':'Gyrolock', 'source':'Centrale Supélec PSI 2022','comp':('C1-05','C2-09'),'corrige':True}"
+% "{'classe':('PSI'),'chapitre':'dyn_pfd_co','type':('td'),'titre':'Gyrolock', 'source':'Centrale Supélec PSI 2022','comp':('C1-05','C2-09','DYN-04','DYN-05','DYN-06'),'corrige':True}"
 %\setchapterimage{bandeau}
 \chapter*{TD \arabic{cptTD} \\ 
 Gyrolock  \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
@@ -13,10 +13,7 @@ Gyrolock \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdif
 
 \setcounter{question}{0}
 \marginnote{Centrale Supélec PSI 2022.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
+\marginnote{\xpComp{DYN}{04}\xpComp{DYN}{05}\xpComp{DYN}{06}}
 
 \ifprof  \marginnote{Corrigé proposé par l'UPSTI.}\else \fi
 
@@ -29,23 +26,23 @@ Gyrolock \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdif
 \caption{\label{fig:09}Modèle cinématique du système GyroLock (représenté pour $\theta_{2}=\theta_{3}=0$)}
 \end{figure}
 
-Dans la modélisation retenue (figure \ref{fig:09}), une liaison pivot non parfaite permet de représenter la flexibilité de l'attache reconfigurable. La table d'opération (0) est supposée fixe et le référentiel $\mathcal{R}_{0}\left(O_{0}, \vec{x}_{0}, \vec{y}_{0}, \vec{z}_{0}\right)$ lié à la table (0) est galiléen. Au stabilisateur (1) est associé le repère $\mathcal{R}_{1}\left(O_{0}, \vec{x}_{0}=\vec{x}_{1}, \vec{y}_{1}, \vec{z}_{1}\right)$ avec $\theta_{1}=\left(\vec{y}_{0}, \vec{y}_{1}\right)=\left(\vec{z}_{0}, \vec{z}_{1}\right)$. Le point $P$ tel que $O_{0} P=L$ représente le bout du stabilisateur (1) en contact avec la zone à opérer.
+Dans la modélisation retenue (figure \ref{fig:09}), une liaison pivot non parfaite permet de représenter la flexibilité de l'attache reconfigurable. La table d'opération (0) est supposée fixe et le référentiel $\mathcal{R}_{0}\left(O_{0}, \vx{0}, \vy{0}, \vz{0}\right)$ lié à la table (0) est galiléen. Au stabilisateur (1) est associé le repère $\mathcal{R}_{1}\left(O_{0}, \vx{0}=\vx{1}, \vy{1}, \vz{1}\right)$ avec $\theta_{1}=\left(\vy{0}, \vy{1}\right)=\left(\vz{0}, \vz{1}\right)$. Le point $P$ tel que $O_{0} P=L$ représente le bout du stabilisateur (1) en contact avec la zone à opérer.
 
 \subsection*{Paramétrage, notations et hypothèses}
 \begin{itemize}
-  \item La liaison pivot d'axe $\left(O_{0}, \vec{x}_{0}\right)$ entre les solides (0) et (1) possède une raideur $k$ et un coefficient de frottement visqueux $f$, d'où $\vec{M}\left(O_{0}, 0 \rightarrow 1\right) \cdot \vec{x}_{0}=-\left(k \theta_{1}+f \dot{\theta}_{1}\right)$;
+  \item La liaison pivot d'axe $\left(O_{0}, \vx{0}\right)$ entre les solides (0) et (1) possède une raideur $k$ et un coefficient de frottement visqueux $f$, d'où $\vec{M}\left(O_{0}, 0 \rightarrow 1\right) \cdot \vx{0}=-\left(k \theta_{1}+f \dot{\theta}_{1}\right)$;
 
   \item les autres liaisons sont supposées parfaites ;
 
-  \item l'action du cœur sur le stabilisateur (1) est modélisée par $\left\{\mathcal{T}_{c \rightarrow 1}\right\}=\left\{\begin{array}{c}f_{c} \vec{y}_{1} \\ \overrightarrow{0}\end{array}\right\}_{P}$;
+  \item l'action du cœur sur le stabilisateur (1) est modélisée par $\left\{\mathcal{T}_{c \rightarrow 1}\right\}=\left\{\begin{array}{c}f_{c} \vy{1} \\ \overrightarrow{0}\end{array}\right\}_{P}$;
 
-\item seul le déplacement vertical du point $P$ est pris en compte. On note $y(t)=-\overrightarrow{O_{0} P} \cdot \vec{y}_{0}$;
+\item seul le déplacement vertical du point $P$ est pris en compte. On note $y(t)=-\overrightarrow{O_{0} P} \cdot \vy{0}$;
 
-\item  le stabilisateur (1) est de masse $m_{1}$ et possède un centre d'inertie $G_{1}$ tel que $\overrightarrow{O_{0} G_{1}}=L_{G_{1}} \vec{z}_{1}$ et l'opérateur d'inertie est $\mathcal{J}\left(G_{1}, 1\right)=\left[\begin{array}{ccc}A_{1} & 0 & 0 \\ 0 & A_{1} & 0 \\ 0 & 0 & C_{1}\end{array}\right]_{\mathcal{B}_{1}} ;$
+\item  le stabilisateur (1) est de masse $m_{1}$ et possède un centre d'inertie $G_{1}$ tel que $\overrightarrow{O_{0} G_{1}}=L_{G_{1}} \vz{1}$ et l'opérateur d'inertie est $\mathcal{J}\left(G_{1}, 1\right)=\left[\begin{array}{ccc}A_{1} & 0 & 0 \\ 0 & A_{1} & 0 \\ 0 & 0 & C_{1}\end{array}\right]_{\mathcal{B}_{1}} ;$
 
   \item la masse et l'inertie de l'étrier (2) sont négligeables ;
 
-  \item la toupie (3) est de masse $m_{3}$ et possède un centre d'inertie $G_{3}$ tel que $\overrightarrow{O_{0} G_{3}}=L_{G_{3}} \vec{z}_{1}+H_{G_{3}} \vec{y}_{1}$;
+  \item la toupie (3) est de masse $m_{3}$ et possède un centre d'inertie $G_{3}$ tel que $\overrightarrow{O_{0} G_{3}}=L_{G_{3}} \vz{1}+H_{G_{3}} \vy{1}$;
 
   \item les figures de changement de base sont données figures 6 et 9 ;
 
@@ -55,22 +52,22 @@ Dans la modélisation retenue (figure \ref{fig:09}), une liaison pivot non parfa
 %Q 14. 
 \question{\label{q:14}Sans détailler les calculs, donner la méthode permettant de déterminer la loi de mouvement du stabilisateur (équation différentielle en $\theta_{1}(t)$ ). L'ensemble isolé, l'inventaire des actions mécaniques extérieures, le théorème utilisé et sa projection scalaire sont à préciser clairement.}
 %Q 15. 
-\question{\label{q:15}Exprimer $\vec{\delta}\left(O_{0}, 1 / 0\right) \cdot \vec{x}_{0}$, la projection sur $\vec{x}_{0}$ du moment dynamique au point $O_{0}$ du solide (1) en mouvement dans le référentiel $\mathcal{R}_{0}$.}
+\question{\label{q:15}Exprimer $\vec{\delta}\left(O_{0}, 1 / 0\right) \cdot \vx{0}$, la projection sur $\vx{0}$ du moment dynamique au point $O_{0}$ du solide (1) en mouvement dans le référentiel $\mathcal{R}_{0}$.}
 \ifprof
 \begin{corrige}
 Par formule de Varignon:
 
-$$ \overrightarrow{\delta}(O_0,1/0)\cdot \overrightarrow{x}_0 = \overrightarrow{\delta}(G_1,1/0)\cdot \overrightarrow{x}_0 + \left( \overrightarrow{O_0 G_1} \wedge m_1 \overrightarrow{\Gamma}(G_1,1/0) \right)\cdot \overrightarrow{x}_0 $$
+$$ \overrightarrow{\delta}(O_0,1/0)\cdot \vx{0} = \overrightarrow{\delta}(G_1,1/0)\cdot \vx{0} + \left( \overrightarrow{O_0 G_1} \wedge m_1 \overrightarrow{\Gamma}(G_1,1/0) \right)\cdot \vx{0} $$
 
-avec $\overrightarrow{\Gamma}(G_1,1/0) = \left. \dfrac{\mathrm{d}^2\overrightarrow{O_0 G_1}}{\mathrm{d}t^2} \right|_0 = -L_{G_1}\ddot{\theta}_1 \overrightarrow{y}_1 -L_{G_1}\dot{\theta}_1^2\overrightarrow{z_1}$ donc $\left( \overrightarrow{O_0 G_1} \wedge m_1 \overrightarrow{\Gamma}(G_1,1/0) \right)\cdot \overrightarrow{x}_0 = m_1 L_{G_1}^2\ddot{\theta}_1$.
+avec $\overrightarrow{\Gamma}(G_1,1/0) = \left. \dfrac{\mathrm{d}^2\overrightarrow{O_0 G_1}}{\mathrm{d}t^2} \right|_0 = -L_{G_1}\ddot{\theta}_1 \overrightarrow{y}_1 -L_{G_1}\dot{\theta}_1^2\overrightarrow{z_1}$ donc $\left( \overrightarrow{O_0 G_1} \wedge m_1 \overrightarrow{\Gamma}(G_1,1/0) \right)\cdot \vx{0} = m_1 L_{G_1}^2\ddot{\theta}_1$.
 
-De plus \textbf{au centre d'inertie} $G_1$: $\overrightarrow{\delta}(G_1,1/0)\cdot \overrightarrow{x}_0 = \left. \dfrac{\mathrm{d}\overrightarrow{\sigma}(G_1,1/0)\cdot \overrightarrow{x}_0}{\mathrm{d}t} \right|_0$ avec 
+De plus \textbf{au centre d'inertie} $G_1$: $\overrightarrow{\delta}(G_1,1/0)\cdot \vx{0} = \left. \dfrac{\mathrm{d}\overrightarrow{\sigma}(G_1,1/0)\cdot \vx{0}}{\mathrm{d}t} \right|_0$ avec 
 
-$\overrightarrow{\sigma}(G_1,1/0)\cdot \overrightarrow{x}_0 = \mathcal{I}(G_1,1)\overrightarrow{\Omega}(1/0)\cdot \overrightarrow{x}_0$.\\
+$\overrightarrow{\sigma}(G_1,1/0)\cdot \vx{0} = \mathcal{I}(G_1,1)\overrightarrow{\Omega}(1/0)\cdot \vx{0}$.\\
 
-Donc $\overrightarrow{\sigma}(G_1,1/0)\cdot \overrightarrow{x}_0 = A_1 \dot{\theta}_1$ et $\overrightarrow{\delta}(G_1,1/0)\cdot \overrightarrow{x}_0 = A_1 \ddot{\theta}_1$.\\
+Donc $\overrightarrow{\sigma}(G_1,1/0)\cdot \vx{0} = A_1 \dot{\theta}_1$ et $\overrightarrow{\delta}(G_1,1/0)\cdot \vx{0} = A_1 \ddot{\theta}_1$.\\
 
-Finalement $\boxed{\overrightarrow{\delta}(O_0,1/0)\cdot \overrightarrow{x}_0 = (A_1 + m_1 L_{G_1}^2)\ddot{\theta}_1}$.
+Finalement $\boxed{\overrightarrow{\delta}(O_0,1/0)\cdot \vx{0} = (A_1 + m_1 L_{G_1}^2)\ddot{\theta}_1}$.
 
 \end{corrige}
 \else
@@ -93,13 +90,13 @@ Ensuite $\boxed{\overrightarrow{\Gamma}(G_3,3/0) = \left. \dfrac{\mathrm{d}\over
 %Q 17. 
 \question{\label{q:17}En conservant les conditions de fonctionnement ci-contre
 %issues de la partie \ref{sec:II.A} 
-\sidenote{$\ddot{\theta}_{2} \approx 0, \theta_{2} \approx 0$ et $\dot{\theta}_{3}=\omega_{3}$ constante.}, il est possible de montrer que $\vec{\delta}\left(G_{3}, 3 / 0\right) \cdot \vec{x}_{0}=A_{3} \ddot{\theta}_{1}-c_{x}(t)$ avec $c_{x}(t)=B_{3} \omega_{3} \dot{\theta}_{2}$ (résultat admis sans démonstration). En déduire $\vec{\delta}\left(O_{0}, 3 / 0\right) \cdot \vec{x}_{0}$, en fonction de $A_{3}, c_{x}(t), m_{3}, L_{G_{3}}, H_{G_{3}}$ et $\ddot{\theta}_{1}(t)$.}
+\sidenote{$\ddot{\theta}_{2} \approx 0, \theta_{2} \approx 0$ et $\dot{\theta}_{3}=\omega_{3}$ constante.}, il est possible de montrer que $\vec{\delta}\left(G_{3}, 3 / 0\right) \cdot \vx{0}=A_{3} \ddot{\theta}_{1}-c_{x}(t)$ avec $c_{x}(t)=B_{3} \omega_{3} \dot{\theta}_{2}$ (résultat admis sans démonstration). En déduire $\vec{\delta}\left(O_{0}, 3 / 0\right) \cdot \vx{0}$, en fonction de $A_{3}, c_{x}(t), m_{3}, L_{G_{3}}, H_{G_{3}}$ et $\ddot{\theta}_{1}(t)$.}
 \ifprof
 \begin{corrige}
 Par formule de Varignon:
 
 \begin{align*}
-\overrightarrow{\delta}(O_0,3/0)\cdot \overrightarrow{x}_0 &= \overrightarrow{\delta}(G_3,3/0)\cdot \overrightarrow{x}_0 + \left( \overrightarrow{O_0 G_3} \wedge m_3\overrightarrow{\Gamma}(G_3,3/0) \right)\cdot \overrightarrow{x}_0 \\
+\overrightarrow{\delta}(O_0,3/0)\cdot \vx{0} &= \overrightarrow{\delta}(G_3,3/0)\cdot \vx{0} + \left( \overrightarrow{O_0 G_3} \wedge m_3\overrightarrow{\Gamma}(G_3,3/0) \right)\cdot \vx{0} \\
 &= A_3 \ddot{\theta}_1 - c_x(t) +m_3L_{G_3}\left(L_{G_3}\ddot{\theta}_1 + H_{G_3}\dot{\theta}_1^2\right) + m_3 H_{G_3}\left(H_{G_3}\ddot{\theta}_1 - L_{G_3}\dot{\theta}_1^2\right)\\
 &= \left(A_3 +m_3L_{G_3}^2 +m_3H_{G_3}^2\right) \ddot{\theta}_1 - c_x(t)
 \end{align*}
@@ -118,7 +115,7 @@ $$
 \begin{corrige}
 En appliquant la stratégie vue en question 14 on a l'équation (effets dynamiques de (2) négligés et actions de la pesanteur négligées):
 
-$$ \overrightarrow{\delta}(O_0,1/0)\cdot \overrightarrow{x}_0 + \overrightarrow{\delta}(O_0,3/0)\cdot \overrightarrow{x}_0 = -(k\theta_1 + f \dot{\theta}_1) + \left( \overrightarrow{O_0 P} \wedge f_c \overrightarrow{y}_1 \right)\cdot \overrightarrow{x}_0 $$ 
+$$ \overrightarrow{\delta}(O_0,1/0)\cdot \vx{0} + \overrightarrow{\delta}(O_0,3/0)\cdot \vx{0} = -(k\theta_1 + f \dot{\theta}_1) + \left( \overrightarrow{O_0 P} \wedge f_c \overrightarrow{y}_1 \right)\cdot \vx{0} $$ 
 
 Tout calcul fait avec $\overrightarrow{O_0 P} = L \overrightarrow{z}_1$:
 

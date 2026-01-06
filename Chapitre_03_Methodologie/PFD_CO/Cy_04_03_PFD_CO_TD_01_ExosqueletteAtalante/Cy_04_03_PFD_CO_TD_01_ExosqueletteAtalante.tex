@@ -1,4 +1,4 @@
-% "{'classe':('PSI'),'chapitre':'dyn_pfd_co','type':('td'),'titre':'Exosquelette Atalante', 'source':'Centrale Supélec PSI 2023','comp':('C1-05','C2-09'),'corrige':True}"
+% "{'classe':('PSI'),'chapitre':'dyn_pfd_co','type':('td'),'titre':'Exosquelette Atalante', 'source':'Centrale Supélec PSI 2023','comp':('C1-05','C2-09','DYN-04','DYN-05','DYN-06'),'corrige':True}"
 %\setchapterimage{bandeau}
 \chapter*{TD \arabic{cptTD} \\ 
 Exosquelette Atalante  \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi
@@ -13,10 +13,8 @@ Exosquelette Atalante \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \els
 
 \setcounter{question}{0}
 \marginnote{Centrale Supélec PSI 2023.}
-\marginnote[1cm]{
-\UPSTIcompetence[2]{C1-05}
-\UPSTIcompetence[2]{C2-09}
-}
+\marginnote{\xpComp{DYN}{04}\xpComp{DYN}{05}\xpComp{DYN}{06}}
+
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{fig_00}
 \caption{Exosquelette Atalante et modélisation 3D associée \label{Cy_04_03_PFD_CO_TD_01_fig_00}}
@@ -120,7 +118,7 @@ sera considérée ici (cas de la marche en ligne droite) avec les hypothèses et
 
 \ifprof
 \else
-On pose pour la suite : $\overrightarrow{B G_{3}}=-L_{0} \vec{z}^{\prime}$. On note $\alpha$ l'angle entre $\vec{z}^{\prime}{ }_{3}$ et $\vec{z}_{3}: \alpha=\left(\vec{y}_{3}, \vec{y}^{\prime}{ }_{3}\right)=\left(\vec{z}_{3}, \vec{z}^{\prime}{ }_{3}\right)$. On montre que $L_0 =\sqrt{l_0 ^2 + \left(L_3- l_3\right)^2}$ et $\alpha = \arcsin \left(\dfrac{l_0}{L_0}\right)$ avec $L_0= \SI{0,32}{m}$ et $\alpha \simeq \SI{0,67}{rad} \simeq 39\degres$.
+On pose pour la suite : $\overrightarrow{B G_{3}}=-L_{0} \vec{z}^{\prime}_3$. On note $\alpha$ l'angle entre $\vec{z}^{\prime}{ }_{3}$ et $\vec{z}_{3}: \alpha=\left(\vec{y}_{3}, \vec{y}^{\prime}{ }_{3}\right)=\left(\vec{z}_{3}, \vec{z}^{\prime}{ }_{3}\right)$. On montre que $L_0 =\sqrt{l_0 ^2 + \left(L_3- l_3\right)^2}$ et $\alpha = \arcsin \left(\dfrac{l_0}{L_0}\right)$ avec $L_0= \SI{0,32}{m}$ et $\alpha \simeq \SI{0,67}{rad} \simeq 39\degres$.
 \fi
 
 
